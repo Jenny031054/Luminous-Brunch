@@ -4,6 +4,7 @@
 
 - shuuu
 - Santu
+- shuo
 
 ## Node.js 版本
 

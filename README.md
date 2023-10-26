@@ -2,6 +2,7 @@
 
 ## 團隊成員
 
+- shuuu
 - Santu
 
 ## Node.js 版本

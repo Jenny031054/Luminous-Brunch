@@ -5,6 +5,7 @@
 - shuuu
 - Santu
 - shuo
+- James
 
 ## Node.js 版本
 

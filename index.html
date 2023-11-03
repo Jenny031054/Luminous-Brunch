@@ -5,29 +5,84 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>index</title>
-    <script type="module" crossorigin src="/Luminous-Brunch/assets/main-71c30259.js"></script>
-    <link rel="stylesheet" href="/Luminous-Brunch/assets/main-accf464b.css">
+    <script type="module" crossorigin src="/Luminous-Brunch/assets/main-69b2a30c.js"></script>
+    <link rel="stylesheet" href="/Luminous-Brunch/assets/main-a2752e7f.css">
   </head>
   <body>
     <h1 class="header">我是 header</h1>
 <a href="index.html">index</a>
 <a href="about.html">about</a>
 <a href="contact.html">contact</a>
-    <h1 class="index-title">我是首頁</h1>
+    <h1 class="font-NotoSans">
+      <span class="material-symbols-outlined">
+        home
+      </span>
+      我是首頁icon</h1>
+      <h2 class="text-gray-300">灰色</h2>
+      <h2 class="font-Caveat text-yellow-300">hello</h2>
+      <div class="bg-pink">
+        <p class="text-secondary-200">hello</p>
+        <h2 class="font-OpenSans">world</h2>
+      </div>
+  <!-- Swiper -->
+  <div class="swiper mySwiper" data-aos="fade-right">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">Slide 1</div>
+      <div class="swiper-slide">Slide 2</div>
+      <div class="swiper-slide">Slide 3</div>
 
-    <div class="card" style="width: 18rem">
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+    <div class="card" style="width: 18rem" data-aos="fade-right">
       <img src="/Luminous-Brunch/assets/cat-0c0689ae.jpg" class="card-img-top" alt="cat" />
       <div class="card-body">
-        <h5 class="card-title">卡片元件</h5>
+        <h5 class="font-NotoSerif">卡片元件</h5>
         <p class="card-text">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, odit, iusto odio assumenda alias id
           nobis earum!
         </p>
       </div>
     </div>
-
+  <!-- 預約三步驟 start -->
+  <div class="container my-11">
+    <div class="d-flex flex-column justify-content-center">
+      <h2 class="text-primary font-NotoSerif fw-bold text-center mb-11">簡單預約三步驟</h2>
+      <div class="row align-items-center">
+        <div class="col-lg-4">
+          <div class="d-flex flex-column text-center">
+            <img src="/Luminous-Brunch/assets/Illustration-1810ea46.png" width="187px" alt="" class="mx-auto mb-7">
+            <p class="font-NotoSerif fs-4">1. 挑選時段</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="d-flex flex-column text-center  justify-content-center">
+            <img src="/Luminous-Brunch/assets/Illustration (1)-7f27695c.png" width="187px" alt="" class="mx-auto mb-7">
+            <p class="font-NotoSerif fs-4">2. 確認訂位</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="d-flex flex-column text-center">
+            <img src="/Luminous-Brunch/assets/Illustration (2)-71619cbb.png" width="145px" height="194px" alt="" class="mx-auto mb-7">
+            <p class="font-NotoSerif fs-4">3. 完成訂位</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  <!-- 預約三步驟 end -->
+  <!-- 菜單區塊 start -->
+  <div class="d-flex" >
+    <div class="w-50"><img src="/Luminous-Brunch/assets/index-menu-1-a12c823f.png" class="img-fluid" alt="" ></div>
+    <div class="w-50">
+      <img src="/Luminous-Brunch/assets/index-menu-2-02a1ec39.png" alt="" class="img-fluid" >
+    </div>
+  </div>
+  <!-- 菜單區塊 end -->
     <!-- Modal 按鈕 -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <button data-aos="fade-right" type="button" class="btn btn-primary font-Caveat" data-bs-toggle="modal" data-bs-target="#exampleModal">
       打開 modal
     </button>
 
@@ -42,7 +97,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal 標題</h5>
+            <h5 class="font-Caveat" id="exampleModalLabel">Modal 標題</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">內容</div>
@@ -56,5 +111,18 @@
 
     <footer class="footer">我是 footer</footer>
     
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
   </body>
 </html>

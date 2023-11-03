@@ -298,26 +298,56 @@ $cyans: (
 // fusv-enable
 
 // scss-docs-start theme-color-variables
-$primary:       $blue !default;
-$secondary:     $gray-600 !default;
+$primary:        #461B09 !default;  //custom 
+$primary-200:    #693B28 !default;  //custom 
+$primary-100:    #B58A78 !default;  //custom
+$secondary:      #EC6933 !default;  //custom =secondary-200 !default;
+$secondary-100:  #E28763 !default;  //custom
+$yellow-300:     #574009 !default;  //custom
+$yellow-200:     #94762D !default;  //custom
+$yellow-100:     #F1A42E !default;  //custom
+$light:          #FBFBFB;  //custom =gray-100
+
+$gray-200:       #C1C1C1;  //custom 
+$gray-300:       #8B8B8B;  //custom
+$gray-400:       #4A4A4A;  //custom
+$gray-500:       #343434;  //custom 已改成預設文字顏色
+$gray:           #EDE7DD;  //custom =bg-gray的顏色，需要用的時候輸入bg-gray 
+$white:          #FDF8F4;  //custom =bg-white
+$pink:           #F4E9E2;  //custom =bg-pink
+
 $success:       $green !default;
 $info:          $cyan !default;
 $warning:       $yellow !default;
 $danger:        $red !default;
 $light:         $gray-100 !default;
 $dark:          $gray-900 !default;
+
 // scss-docs-end theme-color-variables
 
 // scss-docs-start theme-colors-map
-$theme-colors: (
-  "primary":    $primary,
-  "secondary":  $secondary,
-  "success":    $success,
-  "info":       $info,
-  "warning":    $warning,
-  "danger":     $danger,
-  "light":      $light,
-  "dark":       $dark
+$theme-colors: (  
+  "primary":        #461B09,  //custom =primary-300
+  "primary-200":    #693B28,  //custom 
+  "primary-100":    #B58A78,  //custom
+  "secondary":      #EC6933,  //custom =secondary-200,
+  "secondary-100":  #E28763,  //custom
+  "yellow-300":     #574009,  //custom
+  "yellow-200":     #94762D,  //custom
+  "yellow-100":     #F1A42E,  //custom
+  "success":        $success,
+  "info":           $info,
+  "warning":        $warning,
+  "danger":         $danger,
+  "light":          #FBFBFB,  //custom =gray-100
+  "dark":           $dark,
+  "gray-200":       #C1C1C1,  //custom 
+  "gray-300":       #8B8B8B,  //custom
+  "gray-400":       #4A4A4A,  //custom
+  "gray-500":       #343434,  //custom 已改成預設文字顏色
+  "gray":           #EDE7DD,  //custom =bg-gray的顏色，需要用的時候輸入bg-gray 
+  "white":          #FDF8F4,  //custom =bg-white
+  "pink":           #F4E9E2,  //custom =bg-pink
 ) !default;
 // scss-docs-end theme-colors-map
 
@@ -406,7 +436,7 @@ $position-values: (
 
 // $body-bg:                   $white !default;
 $body-bg:                   #FDF8F4 !default;// *custom
-$body-color:                $gray-900 !default;
+$body-color:                #343434!default; //  custom
 $body-text-align:           null !default;
 
 // Links
@@ -414,9 +444,9 @@ $body-text-align:           null !default;
 // Style anchor elements.
 
 $link-color:                              $primary !default;
-$link-decoration:                         underline !default;
+$link-decoration:                         null !default ;//custom underline
 $link-shade-percentage:                   20% !default;
-$link-hover-color:                        shift-color($link-color, $link-shade-percentage) !default;
+$link-hover-color:                        #8B8B8B; //custom shift-color($link-color, $link-shade-percentage) !default;
 $link-hover-decoration:                   null !default;
 
 $stretched-link-pseudo-element:           after !default;
@@ -547,7 +577,7 @@ $aspect-ratios: (
 
 // scss-docs-start font-variables
 // stylelint-disable value-keyword-case
-$font-family-sans-serif:      system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-sans-serif:     'Open Sans','Noto Sans TC',system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default; // custom
 $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 // stylelint-enable value-keyword-case
 $font-family-base:            var(--#{$prefix}font-sans-serif) !default;

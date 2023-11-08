@@ -444,7 +444,7 @@ $body-text-align:           null !default;
 // Style anchor elements.
 
 $link-color:                              $primary !default;
-$link-decoration:                         null !default ;//custom underline
+$link-decoration:                         none !default ;//custom underline
 $link-shade-percentage:                   20% !default;
 $link-hover-color:                        #8B8B8B; //custom shift-color($link-color, $link-shade-percentage) !default;
 $link-hover-decoration:                   null !default;

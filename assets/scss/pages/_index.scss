@@ -25,3 +25,64 @@
   justify-content: center;
   align-items: center;
 }
+// banner start
+.banner{
+  background: url('../images/index-banner-bgImg-mobile.png') center;
+  min-height: 446px;
+  background-size: cover;
+  @media (min-width: 376px){
+    background: url('../images/index-banner-bgImg.png');
+    min-height: 800px;
+  }
+  .logoText{
+    max-width: 100%;
+    height: 114px;
+    @media (min-width: 993px) {
+      padding-left: 120px;
+    }
+    object-fit: cover;
+  }
+  &-text{
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  .btnGroup{
+    align-self: flex-end;
+    margin-bottom: 42px;
+    @media (min-width: 376px){
+      margin-bottom: 128px;
+      // width: ;
+    }
+  }
+}
+// 立即訂位按鈕
+.btn_reserve{
+  display: block;
+  color: $light;
+  font-family: 'Noto Serif TC';
+  background-color: $primary-200;
+  border: 1px solid $light;
+  max-width: 210px;
+  text-align: center;
+  &:hover{
+    color: $light;
+    background-color: $primary-100;
+    border-color: $primary-100;
+  }
+}
+
+@media (min-width: 993px) {
+  .btn_reserve_center{
+    margin-left: 50%;
+  }
+}
+.desktop_arrow{
+  position: absolute;
+  bottom: -18%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.img_comma{
+  left: 33px;
+  transform: translateY(-50%);
+}
+// banner end

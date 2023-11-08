@@ -1,4 +1,28 @@
-.header{
-  background: $secondary-100;
-  font-size: 64px;
+.navbar_group a{
+  color: $gray-500;
+  &:hover{
+    color: $primary-100;
+  }
+}
+.dropdown{
+  top: 9%;
+  width: inherit;
+  z-index: 12;
+  transition: all 0.3s;
+  overflow: hidden;
+  max-height: 0px;
+  a{
+    display: block;
+    background-color: $gray;
+    &:hover{
+      background-color: $primary-100;
+      color: $white;
+    }
+  }
+}
+.dropdown.active {
+  max-height: 288px;
+}
+.selectMenu.focused:focus{
+  color: $primary-100;
 }

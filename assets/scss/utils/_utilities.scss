@@ -1,0 +1,17 @@
+// 使font-size斷點有效果
+
+$utilities: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$utilities: map-merge(
+  (
+    
+    "font-size": (
+      responsive: true, // *custom
+      rfs: true,
+      property: font-size,
+      class: fs,
+      values: $font-sizes
+    ),
+  ),
+  $utilities
+);

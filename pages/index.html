@@ -29,43 +29,14 @@
     <!-- banner end -->
     
     
-    <h1 class="font-NotoSans">
-      <span class="material-symbols-outlined">
-        home
-      </span>
-      我是首頁icon</h1>
-      <h2 class="text-gray-300">灰色</h2>
-      <h2 class="font-Caveat text-yellow-300">hello</h2>
-      <div class="bg-pink">
-        <p class="text-secondary-200">hello</p>
-        <h2 class="font-OpenSans">world</h2>
-      </div>
-  <!-- Swiper -->
-  <div class="swiper mySwiper" data-aos="fade-right">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">Slide 1</div>
-      <div class="swiper-slide">Slide 2</div>
-      <div class="swiper-slide">Slide 3</div>
+   
 
-    </div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-  </div>
-    <div class="card" style="width: 18rem" data-aos="fade-right">
-      <img src="../assets/images/cat.jpg" class="card-img-top" alt="cat" />
-      <div class="card-body">
-        <h5 class="font-NotoSerif">卡片元件</h5>
-        <p class="card-text">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, odit, iusto odio assumenda alias id
-          nobis earum!
-        </p>
-      </div>
-    </div>
+    
   <!-- 預約三步驟 start -->
   <div class="container my-11">
     <div class="d-flex flex-column justify-content-center">
-      <h2 class="text-primary font-NotoSerif fw-bold text-center mb-11">簡單預約三步驟</h2>
-      <div class="row align-items-center">
+      <h2 class="text-primary font-NotoSerif fw-bold text-center mb-11 " data-aos="fade-right">簡單預約三步驟</h2>
+      <div class="row align-items-center" data-aos="fade-out">
         <div class="col-lg-4">
           <div class="d-flex flex-column text-center">
             <img src="../assets/images/Illustration.png" width="187px" alt="" class="mx-auto mb-7">
@@ -90,56 +61,99 @@
   </div>
   <!-- 預約三步驟 end -->
   <!-- 菜單區塊 start -->
-  <div class="d-flex" >
-    <div class="w-50"><img src="../assets/images/index-menu-1.png" class="img-fluid" alt="" ></div>
-    <div class="w-50">
-      <img src="../assets/images/index-menu-2.png" alt="" class="img-fluid" >
-    </div>
-  </div>
-  <!-- 菜單區塊 end -->
-    <!-- Modal 按鈕 -->
-    <button data-aos="fade-right" type="button" class="btn btn-primary font-Caveat" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      打開 modal
-    </button>
-
-    <!-- Modal 元件 -->
-    <div
-      class="modal fade"
-      id="exampleModal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="font-Caveat" id="exampleModalLabel">Modal 標題</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">內容</div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
-            <button type="button" class="btn btn-primary">確定</button>
-          </div>
-        </div>
+   <!-- swiper+菜單輪播測試 Mobile -->
+  <!-- Swiper -->
+<div class="position-relative d-lg-none mb-7">
+  <div class="menu-border"></div>
+  <div class="swiper mySwiper ">
+    <div class="swiper-wrapper position-relative">
+      <div class="swiper-slide position-relative">
+        <img src="../assets/images/index-menu-mobile.jpg" alt="首頁菜單輪播1" class="">
       </div>
+      <div class="swiper-slide position-relative">
+        <img src="../assets/images/index-menu-mobile.jpg" alt="首頁菜單輪播1" class="">
+      </div>
+      <div class="swiper-slide position-relative">
+        <img src="../assets/images/index-menu-mobile.jpg" alt="首頁菜單輪播1" class="">
+      </div>
+      
     </div>
+    
+    <div class="swiper-pagination"></div>
+  </div>
+  <a href="#" class="menu-title-bg position-absolute translate-middle menu-title-bg-brunch">
+    <h3 class="fs-3 fs-md-1 font-NotoSerif text-light fw-bold">精 選 早 午 餐</h1>
+    <h5 class="fs-5 font-Caveat text-light mt-1">Brunch Specials</h5>
+  </a>
+  <a href="#" class="menu-title-bg position-absolute translate-middle menu-title-bg-news">
+    <h3 class="fs-3 fs-md-1 font-NotoSerif text-light fw-bold">最 新 餐 點</h1>
+    <h5 class="fs-5 font-Caveat text-light mt-1">New Menu Items</h5>
+  </a>
+  
+  
+</div>  
+  <!-- swiper+菜單輪播測試 mobile 結束 -->
+  <!-- swiper+菜單輪播測試 pc -->
+  <!-- Swiper -->
+<div class="position-relative d-none d-lg-block  mb-11">
+  <div class="menu-border"></div>
+  <div class="swiper mySwiper position-relative">
+    <div class="swiper-wrapper position-relative">
+      <div class="swiper-slide position-relative">
+        <img src="../assets/images/index-menu-1.jpg" alt="首頁菜單輪播1" class="">
+      </div>
+      <div class="swiper-slide position-relative">
+        <img src="../assets/images/index-menu-1.jpg" alt="首頁菜單輪播1" class="">
+      </div>
+      <div class="swiper-slide position-relative">
+        <img src="../assets/images/index-menu-1.jpg" alt="首頁菜單輪播1" class="">
+      </div>
+      
+    </div>
+    
+    <div class="swiper-pagination mt-5"></div>
+  </div>
+  <a href="#" class="menu-title-bg position-absolute translate-middle menu-title-bg-brunch">
+    <h1 class="fs-1 font-NotoSerif text-light fw-bold">精 選 早 午 餐</h1>
+    <p class="fs-3 font-Caveat text-light mt-1">Brunch Specials</p>
+  </a>
+  <a href="#" class="menu-title-bg position-absolute translate-middle menu-title-bg-news">
+    <h1 class="fs-1 font-NotoSerif text-light fw-bold">最 新 餐 點</h1>
+    <p class="fs-3 font-Caveat text-light mt-1">New Menu Items</p>
+  </a>
+  
+  
+</div>  
+  <!-- swiper+菜單輪播測試 結束 -->
+  <!-- 菜單區塊 end -->
+    
 
     <%- include('./layout/footer'); -%>
 
-    <script type="module" src="../main.js"></script>
+    
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
       AOS.init();
     </script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+     <!-- Initialize Swiper -->
     <script>
-      var swiper = new Swiper(".mySwiper", {
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-      });
+    var swiper = new Swiper(".mySwiper", {
+      
+      pagination: {
+        el: ".swiper-pagination",
+        dynamicBullets: true,
+      },
+      autoplay: {
+        delay: 3000,
+        stopOnLastSlide: false,
+        disableOnInteraction: true,
+      },
+      // effect: "fade",
+      spaceBetween: 0,
+    });
     </script>
+    <script type="module" src="../main.js"></script>
   </body>
 </html>

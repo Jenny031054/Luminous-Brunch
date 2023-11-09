@@ -14,7 +14,8 @@
 //swiper (測試用)
 .swiper {
   width: 100%;
-  height:200px;
+  height:100%;
+  
 }
 
 .swiper-slide {
@@ -24,6 +25,26 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+:root {
+  --swiper-theme-color: #E28763;
+}
+.swiper-pagination-bullet{
+  width: 36px;
+  height: 8px;
+  border-radius: 100px;
+}
+.swiper-pagination-bullet-active-main{
+  width: 56px;
+  border-radius: 100px;
 }
 // banner start
 .banner{
@@ -86,3 +107,70 @@
   transform: translateY(-50%);
 }
 // banner end
+
+// menu section start
+@keyframes nex-animation{
+  0%{
+    opacity:0.5
+}
+  80%{
+    opacity:0.8
+}
+  100%{
+    opacity:1
+}
+
+}
+.menu-title-bg{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid $light;
+  background: rgba(255, 255, 255, 0.30);
+  backdrop-filter: blur(2px);
+  padding: 24px 48px;
+  line-height: 120%;
+  overflow:hidden;
+  z-index: 4000;
+    &:hover{
+      background: rgba(3, 0, 0, 0.5);
+      backdrop-filter: blur(2px);
+    }
+    
+  @include pad(){
+    padding: 12px 24px;
+  }
+}
+.menu-title-bg-brunch{
+  top:75%;
+  left:25%;
+  @include pad(){
+    top:25%;
+    left:auto;
+    right:5%
+  }
+}
+.menu-title-bg-news{
+  top:25%;
+  right:5%;
+  @include pad(){
+    top:75%;
+    right:auto;
+    left:25%
+  }
+}
+.menu-border{
+  border:2px solid $light;
+  position:absolute;
+  width: 97%;
+  height: 95%;
+  z-index: 4000; 
+  top:2.5%;
+  bottom:2.5%;
+  left:2%;
+  right:2%;
+}
+
+
+// menu section end

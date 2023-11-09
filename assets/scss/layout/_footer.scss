@@ -1,4 +1,44 @@
-.footer{
-  background: #69F0AE;
-  font-size: 64px;
+.d-flex{
+  list-style:none;
+};
+.margin{
+  margin: 10px;
+};
+.footer-box{
+  ul{
+    margin: 2rem;
+    text-decoration: none;
+  }
+  li{
+    margin: 1.5rem;
+    a{
+      text-decoration: none;
+      color: black;
+      &:hover{
+        color: #8b8b8b
+      }
+    }
+  }
+};
+.footer-icon ul li{
+  margin: 1.5rem;
+};
+.Info {
+  li{
+  margin-right: 1rem;
+}
+  img{
+    margin-right: 5px;
+  }
+};
+.border{
+  border: 1px #c1c1c1 solid;
+};
+.Copyright {
+  p{
+    margin-top: 1rem;
+    color: #c1c1c1;
+    font-size: 12px;
+  }
+  
 }

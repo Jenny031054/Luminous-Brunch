@@ -1,16 +1,35 @@
-.navbar_group a{
+.dropdownNavbar{
+  @media (max-width: 992px){
+    position: absolute;
+    margin-left: -12px;
+    top: 100%;
+    z-index: 10;
+    width: 100%;
+    overflow: hidden;
+    max-height: 0px;
+    transition: all 0.3s;
+  }
+}
+.dropdownNavbar.active{
+  max-height: 626px;
+}
+.dropdownNavbar a{
   color: $gray-500;
   &:hover{
     color: $primary-100;
   }
 }
-.dropdown{
-  top: 9%;
+.dropdownMenu{
+  top: 80%;
   width: inherit;
   z-index: 12;
   transition: all 0.3s;
   overflow: hidden;
   max-height: 0px;
+  @media (max-width: 992px){
+    top: 60%;
+    width: 100%;
+  }
   a{
     display: block;
     background-color: $gray;
@@ -20,9 +39,17 @@
     }
   }
 }
-.dropdown.active {
+.dropdownMenu.active{
   max-height: 288px;
+  @media (max-width: 992px){
+    max-height: 342px;
+  }
 }
 .selectMenu.focused:focus{
   color: $primary-100;
+}
+.position_absolute_lg{
+  @media (min-width: 992px){
+    position: absolute;
+  }
 }

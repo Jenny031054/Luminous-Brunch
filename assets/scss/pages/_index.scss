@@ -37,6 +37,10 @@
 :root {
   --swiper-theme-color: #E28763;
 }
+.swiper-pagination{
+  position: static;
+  margin: 0 auto;
+}
 .swiper-pagination-bullet{
   width: 36px;
   height: 8px;
@@ -164,7 +168,7 @@
   border:2px solid $light;
   position:absolute;
   width: 97%;
-  height: 95%;
+  height: 90%;
   z-index: 4000; 
   top:2.5%;
   bottom:2.5%;

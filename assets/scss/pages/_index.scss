@@ -184,3 +184,68 @@
 
 
 // menu section end
+
+// 顧客評論 start
+
+.bg{
+  background-color: #F4E9E2;
+}
+.text{
+  h3{
+    color: #461B09;
+  }
+}
+.card{
+  border: 1px solid black;
+  border-radius: 5px;
+  }
+  .cord-img{
+  width: 100%;
+  object-fit: cover;
+  }
+  .card{
+      ul{
+        margin-top: 10px;
+        padding-inline-start:none;
+        margin-bottom: 0;
+        li{
+        display: flex;
+        align-items: center;
+        margin-right: 10px;
+        }
+    }
+  } 
+
+  .card-body{
+      display: block;
+      padding:0px 1rem 1rem 1rem;
+  
+  }
+  .star-box{
+      margin-bottom: 10px;
+  }
+  
+  .star{
+      margin-right: 5px;
+      width: 20px;
+      height: 20px;
+      background-color: 
+      #F1A42E;
+      clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  }
+  .col-md-2{
+    ul{
+      padding-left: 0rem;
+    }
+  } 
+
+.booking{
+    button{
+      background-color:  #693B28;
+      color: #FBFBFB;
+      &:hover{
+        background-color: #B58A78;
+        color: #FBFBFB;
+      }
+    }
+}

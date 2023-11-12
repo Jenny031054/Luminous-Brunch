@@ -51,12 +51,16 @@
 }
 // banner start
 .banner {
-  background: url('../images/index-banner-bgImg-mobile.png') center;
-  min-height: 446px;
+  background: url('../images/index-banner-bgImg.png') center;
+  min-height: 800px;
   background-size: cover;
-  @media (min-width: 376px) {
-    background: url('../images/index-banner-bgImg.png');
-    min-height: 800px;
+  // @media (min-width: 376px){
+  //   max-height: 800px;
+  // }
+  @media (max-width: 767px) {
+    background: url('../images/index-banner-bgImg-mobile.png') center;
+    min-height: 446px;
+    background-size: cover;
   }
   .logoText {
     max-width: 100%;
@@ -71,10 +75,12 @@
   }
   .btnGroup {
     align-self: flex-end;
-    margin-bottom: 42px;
-    @media (min-width: 376px) {
-      margin-bottom: 128px;
-      // width: ;
+    margin-bottom: 128px;
+    @media (max-width: 767px) {
+      margin-bottom: 48px;
+    }
+    @media (max-width: 376px) {
+      margin-bottom: 42px;
     }
   }
 }
@@ -175,6 +181,81 @@
 }
 
 // menu section end
+
+// 顧客評論 start
+
+.bg {
+  background-color: #f4e9e2;
+}
+.text {
+  h3 {
+    color: #461b09;
+  }
+}
+.card {
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.cord-img {
+  width: 100%;
+  object-fit: cover;
+}
+.card {
+  ul {
+    margin-top: 10px;
+    padding-inline-start: none;
+    margin-bottom: 0;
+    li {
+      display: flex;
+      align-items: center;
+      margin-right: 10px;
+    }
+  }
+}
+
+.card-body {
+  display: block;
+  padding: 0px 1rem 1rem 1rem;
+}
+.star-box {
+  margin-bottom: 10px;
+}
+
+.star {
+  margin-right: 5px;
+  width: 20px;
+  height: 20px;
+  background-color: #f1a42e;
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+}
+.col-md-2 {
+  ul {
+    padding-left: 0rem;
+  }
+}
+
+.booking {
+  button {
+    background-color: #693b28;
+    color: #fbfbfb;
+    &:hover {
+      background-color: #b58a78;
+      color: #fbfbfb;
+    }
+  }
+}
+
 // 提供服務-start
 .offer {
   display: flex;

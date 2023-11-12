@@ -153,20 +153,29 @@
 <!-- 顧客評論 start-->
 <div class="bg h-100">
     <div class="container">
-      <div class="row pt-11">
-          <div class="col-md-2 d-flex align-items-center justify-content-center">
+      <div class="row carousel slide py-11" id="carouselExampleControls" data-bs-ride="carousel">
+          <div class="col-md-2 d-flex align-items-center justify-content-center col-sm-12">
               <div class="text">
                   <h3>顧客評論</h3>
                   <div>
-                      <ul class="d-flex justify-content-around pt-4">
-                          <li class="arrow-left"><a href="#"><img src="/assets/images/Vector.png" alt=""></a></li>
-                          <li class="arrow-right"><a href="#"><img src="/assets/images/Vector-right.png" alt=""></a></li>
+                      <ul class="d-flex justify-content-between">
+                          <li class="arrow-left">
+                          <a href="#" class="" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev" role="button">
+                              <span class="visually-hidden">Previous</span>
+                              <img src="/assets/images/Vector.png" alt="">
+                          </a>
+                          </li>
+                          <li class="arrow-right">  
+                            <a href="#" class="" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next" role="button">
+                              <span class="visually-hidden">Next</span>
+                              <img src="/assets/images/Vector-right.png" alt="">
+                          </a></li>
                       </ul>
                   </div>
               </div>
           </div>
-          <div class="col-md-5">
-              <div class="card">
+          <div class="col-md-5 col-sm-12 carousel-item active">
+              <div class="card w-25 ">
                   <ul class="d-flex">
                       <li><img src="/assets/images/Avatar.png" alt="" class="coad-img"></li>
                       <li><div class="card-name">陳大名</div></li>
@@ -183,11 +192,11 @@
                   </div>
               </div>
           </div>
-          <div class="col-md-5">
-              <div class="card">
+          <div class="col-md-5 col-sm-12 carousel-item">
+              <div class="card w-25 ">
                   <ul class="d-flex">
-                      <li><img src="/assets/images/Avatar.png" alt="" class="coad-img"></li>
-                      <li><div class="card-name">陳大名</div></li>
+                      <li><img src="/assets/images/Avatar (2).png" alt="" class="coad-img"></li>
+                      <li><div class="card-name">陳大名1</div></li>
                   </ul>
                   <div class="card-body">
                       <div class="star-box d-flex">
@@ -202,8 +211,8 @@
               </div>
           </div>
       </div>
-      <div class="d-flex justify-content-center mt-11 pb-11 booking">
-          <button type="button" class="btn btn-lg ">立即訂位</button>
+      <div class="d-flex justify-content-center booking pb-10">
+          <button type="button" class="btn btn-lg">立即訂位</button>
       </div>
     </div>
 </div>

@@ -1,11 +1,11 @@
 // 字型
-.font-NotoSans{
-  font-family:'Noto Sans TC';
+.font-NotoSans {
+  font-family: 'Noto Sans TC';
 }
-.font-NotoSerif{
+.font-NotoSerif {
   font-family: 'Noto Serif TC';
 }
-.font-Caveat{
+.font-Caveat {
   font-family: 'Caveat';
 }
 .font-OpenSans {
@@ -14,8 +14,7 @@
 //swiper (測試用)
 .swiper {
   width: 100%;
-  height:100%;
-  
+  height: 100%;
 }
 
 .swiper-slide {
@@ -35,35 +34,35 @@
 }
 
 :root {
-  --swiper-theme-color: #E28763;
+  --swiper-theme-color: #e28763;
 }
-.swiper-pagination{
+.swiper-pagination {
   position: static;
   margin: 0 auto;
 }
-.swiper-pagination-bullet{
+.swiper-pagination-bullet {
   width: 36px;
   height: 8px;
   border-radius: 100px;
 }
-.swiper-pagination-bullet-active-main{
+.swiper-pagination-bullet-active-main {
   width: 56px;
   border-radius: 100px;
 }
 // banner start
-.banner{
+.banner {
   background: url('../images/index-banner-bgImg.png') center;
   min-height: 800px;
   background-size: cover;
   // @media (min-width: 376px){
-    //   max-height: 800px;
-    // }
-    @media (max-width: 767px){
+  //   max-height: 800px;
+  // }
+  @media (max-width: 767px) {
     background: url('../images/index-banner-bgImg-mobile.png') center;
     min-height: 446px;
     background-size: cover;
   }
-  .logoText{
+  .logoText {
     max-width: 100%;
     height: 114px;
     @media (min-width: 993px) {
@@ -71,22 +70,22 @@
     }
     object-fit: cover;
   }
-  &-text{
+  &-text {
     background-color: rgba(255, 255, 255, 0.5);
   }
-  .btnGroup{
+  .btnGroup {
     align-self: flex-end;
     margin-bottom: 128px;
-    @media (max-width: 767px){
+    @media (max-width: 767px) {
       margin-bottom: 48px;
     }
-    @media (max-width: 376px){
+    @media (max-width: 376px) {
       margin-bottom: 42px;
     }
   }
 }
 // 立即訂位按鈕
-.btn_reserve{
+.btn_reserve {
   display: block;
   color: $light;
   font-family: 'Noto Serif TC';
@@ -94,7 +93,7 @@
   border: 1px solid $light;
   max-width: 210px;
   text-align: center;
-  &:hover{
+  &:hover {
     color: $light;
     background-color: $primary-100;
     border-color: $primary-100;
@@ -102,150 +101,214 @@
 }
 
 @media (min-width: 993px) {
-  .btn_reserve_center{
+  .btn_reserve_center {
     margin-left: 50%;
   }
 }
-.desktop_arrow{
+.desktop_arrow {
   position: absolute;
   bottom: -18%;
   left: 50%;
   transform: translateX(-50%);
 }
-.img_comma{
+.img_comma {
   left: 33px;
   transform: translateY(-50%);
 }
 // banner end
 
 // menu section start
-@keyframes nex-animation{
-  0%{
-    opacity:0.5
+@keyframes nex-animation {
+  0% {
+    opacity: 0.5;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
 }
-  80%{
-    opacity:0.8
-}
-  100%{
-    opacity:1
-}
-
-}
-.menu-title-bg{
+.menu-title-bg {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   border: 2px solid $light;
-  background: rgba(255, 255, 255, 0.30);
+  background: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(2px);
   padding: 24px 48px;
   line-height: 120%;
-  overflow:hidden;
+  overflow: hidden;
   z-index: 4000;
-    &:hover{
-      background: rgba(3, 0, 0, 0.5);
-      backdrop-filter: blur(2px);
-    }
-    
-  @include pad(){
+  &:hover {
+    background: rgba(3, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+  }
+
+  @include pad() {
     padding: 12px 24px;
   }
 }
-.menu-title-bg-brunch{
-  top:75%;
-  left:25%;
-  @include pad(){
-    top:25%;
-    left:auto;
-    right:5%
+.menu-title-bg-brunch {
+  top: 75%;
+  left: 25%;
+  @include pad() {
+    top: 25%;
+    left: auto;
+    right: 5%;
   }
 }
-.menu-title-bg-news{
-  top:25%;
-  right:5%;
-  @include pad(){
-    top:75%;
-    right:auto;
-    left:25%
+.menu-title-bg-news {
+  top: 25%;
+  right: 5%;
+  @include pad() {
+    top: 75%;
+    right: auto;
+    left: 25%;
   }
 }
-.menu-border{
-  border:2px solid $light;
-  position:absolute;
+.menu-border {
+  border: 2px solid $light;
+  position: absolute;
   width: 97%;
   height: 90%;
-  z-index: 4000; 
-  top:2.5%;
-  bottom:2.5%;
-  left:2%;
-  right:2%;
+  z-index: 4000;
+  top: 2.5%;
+  bottom: 2.5%;
+  left: 2%;
+  right: 2%;
 }
-
 
 // menu section end
 
 // 顧客評論 start
 
-.bg{
-  background-color: #F4E9E2;
+.bg {
+  background-color: #f4e9e2;
 }
-.text{
-  h3{
-    color: #461B09;
+.text {
+  h3 {
+    color: #461b09;
   }
 }
-.card{
+.card {
   border: 1px solid black;
   border-radius: 5px;
-  }
-  .cord-img{
+}
+.cord-img {
   width: 100%;
   object-fit: cover;
-  }
-  .card{
-      ul{
-        margin-top: 10px;
-        padding-inline-start:none;
-        margin-bottom: 0;
-        li{
-        display: flex;
-        align-items: center;
-        margin-right: 10px;
-        }
-    }
-  } 
-
-  .card-body{
-      display: block;
-      padding:0px 1rem 1rem 1rem;
-  
-  }
-  .star-box{
-      margin-bottom: 10px;
-  }
-  
-  .star{
-      margin-right: 5px;
-      width: 20px;
-      height: 20px;
-      background-color: 
-      #F1A42E;
-      clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-  }
-  .col-md-2{
-    ul{
-      padding-left: 0rem;
-    }
-  } 
-
-.booking{
-    button{
-      background-color:  #693B28;
-      color: #FBFBFB;
-      &:hover{
-        background-color: #B58A78;
-        color: #FBFBFB;
-      }
-    }
 }
+.card {
+  ul {
+    margin-top: 10px;
+    padding-inline-start: none;
+    margin-bottom: 0;
+    li {
+      display: flex;
+      align-items: center;
+      margin-right: 10px;
+    }
+  }
+}
+
+.card-body {
+  display: block;
+  padding: 0px 1rem 1rem 1rem;
+}
+.star-box {
+  margin-bottom: 10px;
+}
+
+.star {
+  margin-right: 5px;
+  width: 20px;
+  height: 20px;
+  background-color: #f1a42e;
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+}
+.col-md-2 {
+  ul {
+    padding-left: 0rem;
+  }
+}
+
+.booking {
+  button {
+    background-color: #693b28;
+    color: #fbfbfb;
+    &:hover {
+      background-color: #b58a78;
+      color: #fbfbfb;
+    }
+  }
+}
+
+// 提供服務-start
+.offer {
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: 767px) {
+  .offer {
+    margin-bottom: 1rem !important;
+    margin-top: 1rem !important;
+    flex-direction: column;
+  }
+}
+//提供服務-end
+//news section start
+
+.box {
+  width: 700px;
+  height: 413px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  position: absolute;
+  left: 48%;
+  flex-direction: column;
+  .news_list {
+    background: #fffdfd;
+    color: #e28763;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+    z-index: 2;
+  }
+}
+.newsPic {
+  display: flex;
+  max-width: 100%;
+  height: 703px;
+  position: absolute;
+  z-index: 0;
+  left: 25%; /* 讓圖片左邊緣置於父容器的中央 */
+  right: 0;
+}
+.paragraph {
+  flex-direction: column;
+  text-align: left; /* 靠左對齊 */
+}
+.link {
+  // display: flex;
+  width: 700px;
+  height: 48px;
+
+  background-color: transparent;
+}
+//news section end

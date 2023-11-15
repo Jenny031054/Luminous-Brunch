@@ -54,9 +54,7 @@
   background: url('../images/index-banner-bgImg.png') center;
   min-height: 800px;
   background-size: cover;
-  // @media (min-width: 376px){
-  //   max-height: 800px;
-  // }
+
   @media (max-width: 767px) {
     background: url('../images/index-banner-bgImg-mobile.png') center;
     min-height: 446px;

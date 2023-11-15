@@ -257,27 +257,41 @@
 }
 
 // 提供服務-start
-.offer {
+.offer-desktop {
   display: flex;
   justify-content: center;
 }
 @media (max-width: 767px) {
-  .offer {
+  .offer-desktop {
+    display: none;
+  }
+}
+.offer-mobile {
+  display: none;
+  justify-content: center;
+}
+@media (max-width: 767px) {
+  .offer-mobile {
     margin-bottom: 1rem !important;
     margin-top: 1rem !important;
     flex-direction: column;
+    display: flex;
   }
 }
 //提供服務-end
 //news section start
-
+.text-news {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 60px;
+  margin-top: 60px;
+}
 .box {
   width: 700px;
   height: 413px;
   justify-content: center;
   align-items: center;
   text-align: center;
-
   position: absolute;
   left: 48%;
   flex-direction: column;

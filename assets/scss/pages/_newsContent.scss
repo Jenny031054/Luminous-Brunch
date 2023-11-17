@@ -3,7 +3,10 @@
     .list-group {
       text-align: center;
       font-family: 'Noto Serif TC';
+      font-size: 2vmin;
       .list-title {
+        font-weight: bold;
+        font-size: 4vmin;
       }
     }
   }
@@ -13,22 +16,29 @@
     flex-wrap: wrap;
     flex-direction: column;
     align-content: center;
+    .return-to-list {
+      font-size: 1vw;
+    }
     .news-title {
-      border: 1px solid #b58a78;
-      border-radius: 10px;
+      border-radius: 1vw;
       text-align: center;
       font-family: 'Noto Serif TC';
-      color: #461b09;
-      margin: auto;
-      padding: 1rem;
-      width: 60%;
+      padding: 1vmin;
       background-color: #fdf8f4;
+      font-weight: bold;
+      font-size: 4vmin;
+      padding-top: 1vh;
+      padding-bottom: 0vh;
     }
     .news-text {
-      margin-top: 3vh;
+      margin: 1vh;
       padding-top: 3vh;
-      width: 80%;
       font-family: 'Noto Serif TC';
+      font-size: 2vmin;
+    }
+    .news-content-pic {
+      align-items: center;
+      object-fit: cover;
     }
   }
 }

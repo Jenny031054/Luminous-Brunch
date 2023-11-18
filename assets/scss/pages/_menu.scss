@@ -1,0 +1,66 @@
+.bg-menu {
+  background-image: url(/assets/images/index-menu-1.jpg);
+  background: no-repeat cover ;
+  height: 500px;
+}
+.bg-salad {
+    background-image: url(/assets/images/salad.jpg);
+    background-repeat: no-repeat ;
+    background-size: cover;
+    background-position:  center;
+    height: 500px;
+}
+.bg-burger {
+  
+  background-image: url(/assets/images/burger2.jpg);
+  background-repeat: no-repeat  ;
+  background-size: cover;
+  background-position:  right;
+  object-fit: cover;
+  height: 500px;
+    
+  
+  
+
+}
+.bg-sandwich {
+  background-image: url(/assets/images/sandwich.jpg);
+  background-repeat: no-repeat ;
+  background-size: cover;
+  background-position:  right;
+  height: 500px;
+    // width: auto;
+  object-fit: cover;
+  
+}
+.bg-pasta {
+  background-image: url(/assets/images/pasta.jpg);
+  background: no-repeat cover ;
+  background-position:  center;
+  height: 500px;
+
+}
+.bg-brunch {
+  background-image: url(/assets/images/brunch1.jpg);
+  background-repeat: no-repeat  ;
+  background-size: cover;
+  background-position:  center;
+  height: 500px;
+  
+  object-fit: cover;
+}
+.bg-juice {
+  background-image: url(/assets/images/juice.jpg);
+    background-repeat: no-repeat ;
+    background-size: cover;
+   background-position:  right;
+    height: 500px;
+    // width: auto;
+    object-fit: cover;
+}
+.bg-opcity {
+  
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(2px);
+  padding: 24px;
+}

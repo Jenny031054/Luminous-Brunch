@@ -1,0 +1,44 @@
+.row {
+  .col-4 {
+    .list-group {
+      text-align: center;
+      font-family: 'Noto Serif TC';
+      font-size: 2vmin;
+      .list-title {
+        font-weight: bold;
+        font-size: 4vmin;
+      }
+    }
+  }
+  .col-8 {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    .return-to-list {
+      font-size: 1vw;
+    }
+    .news-title {
+      border-radius: 1vw;
+      text-align: center;
+      font-family: 'Noto Serif TC';
+      padding: 1vmin;
+      background-color: #fdf8f4;
+      font-weight: bold;
+      font-size: 4vmin;
+      padding-top: 1vh;
+      padding-bottom: 0vh;
+    }
+    .news-text {
+      margin: 1vh;
+      padding-top: 3vh;
+      font-family: 'Noto Serif TC';
+      font-size: 2vmin;
+    }
+    .news-content-pic {
+      align-items: center;
+      object-fit: cover;
+    }
+  }
+}

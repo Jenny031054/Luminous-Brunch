@@ -1,0 +1,95 @@
+main {
+  .bgimage {
+    min-height: 70vh;
+    background-image: url('https://images.unsplash.com/photo-1543353071-873f17a7a088?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    transition: all 2s ease;
+    position: relative;
+    z-index: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 40vw;
+    .filter {
+      background-color: rgba(0, 0, 0, 0.2);
+      width: 100%;
+      min-height: 70vh;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+    h3 {
+      font-size: 3rem;
+      font-family: 'Noto Serif TC';
+      color: #461b09;
+    }
+    .new-1 {
+      width: 70%;
+    }
+  }
+  .news-desktop {
+    .list {
+      flex-wrap: wrap;
+      display: flex;
+      width: 80vw;
+      margin: 0 auto;
+      // flex-direction: row;
+      .img-wrapper {
+        width: 100%;
+        .news-pic {
+          max-width: 30%;
+          // height: 80%;
+          background-position: center;
+          object-fit: cover;
+          // border: #461b09 solid;
+          // top: 50%;
+          // left: 50%;
+          // transform: translate(-50%, -50%);
+        }
+        .news-content {
+          justify-content: center;
+          width: 30%;
+          align-items: center;
+          display: flex;
+          background: #f4e9e2;
+          padding-right: 3rem;
+          padding-left: 3rem;
+          margin-bottom: 0px;
+          font-family: 'Noto Serif TC';
+          color: #693b28;
+        }
+      }
+    }
+    .card-content {
+      flex-wrap: wrap;
+      text-align: center;
+      font-family: 'Noto Serif TC';
+      .card-img-size {
+        object-fit: cover;
+        background-size: cover;
+      }
+    }
+  }
+}
+@media (max-width: 1399px) {
+  .news-desktop {
+    display: none;
+  }
+}
+
+.news-mobile {
+  display: none;
+  flex-direction: column;
+}
+
+@media (max-width: 1399px) {
+  .news-mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .card {
+      width: 80vw;
+    }
+  }
+}

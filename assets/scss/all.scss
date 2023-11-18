@@ -1,4 +1,4 @@
-@import "../../node_modules/bootstrap/scss/functions";
+@import '../../node_modules/bootstrap/scss/functions';
 @import './utils/variables';
 @import './utils/utilities';
 @import './mixin/mixin';
@@ -12,4 +12,6 @@
 @import './pages/menu.scss';
 
 
-@import "../../node_modules/bootstrap";
+@import '../../node_modules/bootstrap';
+@import './pages/news.scss';
+@import './pages/newsContent';

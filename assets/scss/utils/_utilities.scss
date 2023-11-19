@@ -24,3 +24,8 @@ $utilities: map-merge(
     border-bottom: 1px solid $gray-200;
   }
 }
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}

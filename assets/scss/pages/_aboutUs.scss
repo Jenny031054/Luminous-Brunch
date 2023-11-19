@@ -1,0 +1,11 @@
+.bg_aboutUs {
+  background-image: url(/assets/images/2-1.jpg);
+  height: 400px;
+  background-size: cover;
+  @media (max-width: 767px) {
+    max-height: 250px;
+  }
+}
+.img_h_250 {
+  height: 350px;
+}

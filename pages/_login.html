@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <main>
+        <%- include('./layout/header'); -%>
+            <div class="login-bg">
+              <img src="/assets/images/offerService.png" alt="#">
+            </div>
+          <div class="container d-flex justify-content-center mb-5">
+            <form class="login-body-bg row justify-content-center">
+                <div class="login-body">
+                  <h1 class="h3 mb-3 font-weight-normal text-center text-light">登入</h1>
+                  <div class="mb-2">
+                    <label for="inputEmail" class="sr-only text-light">Email address</label>
+                    <input
+                      type="email"
+                      id="inputEmail"
+                      class="form-control"
+                      placeholder="Email address"
+                      required
+                      autofocus
+                    />
+                  </div>
+                  <div class="mb-2">
+                    <label for="inputPassword" class="sr-only text-light">Password</label>
+                    <input
+                      type="password"
+                      id="inputPassword"
+                      class="form-control"
+                      placeholder="Password"
+                      required
+                    />
+                  </div>
+              
+                  <div class="text-center mt-4">
+                    <button class="btn btn-lg btn-blue btn-block w-100" type="submit">登入</button>
+                  </div>
+                </div>
+                <div class="mt-3">
+                  <div class="text-center my-3"><a href="#" class="text-decoration-none text-blue">忘記密碼</a></div>
+                  <div class="d-flex justify-content-center">
+                    <p class=" text-light pe-3">尚未成為用戶?</p>
+                    <a href="#" class="text-decoration-none text-blue">立即註冊</a>
+                  </div>
+                </div>  
+            </form>
+          </div>
+        </div>
+        <%- include('./layout/footer'); -%>
+    </main>
+    <script type="module" src="../main.js"></script>
+</body>
+</html>

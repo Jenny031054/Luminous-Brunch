@@ -9,8 +9,11 @@
 @import './layout/footer.scss';
 
 @import './pages/index.scss';
+@import './pages/menu.scss';
+@import './pages/login.scss';
 
 @import '../../node_modules/bootstrap';
 @import './pages/news.scss';
 @import './pages/newsContent';
+@import './pages/aboutUs';
 @import './pages/bookingForm';

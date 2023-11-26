@@ -4,13 +4,13 @@ $utilities: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
 $utilities: map-merge(
   (
-    
-    "font-size": (
-      responsive: true, // *custom
+    'font-size': (
+      responsive: true,
+      // *custom
       rfs: true,
       property: font-size,
       class: fs,
-      values: $font-sizes
+      values: $font-sizes,
     ),
   ),
   $utilities
@@ -19,8 +19,8 @@ $utilities: map-merge(
 .fw-500 {
   font-weight: 500;
 }
-.border-bottom-1{
-  @media (max-width: 992px){
+.border-bottom-1 {
+  @media (max-width: 992px) {
     border-bottom: 1px solid $gray-200;
   }
 }
@@ -28,4 +28,7 @@ img {
   max-width: 100%;
   height: auto;
   object-fit: cover;
+}
+.fs-48 {
+  font-size: 48px;
 }

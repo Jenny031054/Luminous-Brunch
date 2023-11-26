@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger</title>
+</head>
+<body>
+<%- include('./layout/header'); -%>
+  <div class="py-6">
+    <div class="container">
+        <h1 id="menuTitle"  class="display-1 text-center text-primary fw-bolder font-Caveat mb-auto">| Burger |</h1>
+    </div>
+  </div>
+   <!-- 菜單品項選單 -->
+   <%- include('./layout/menuList'); -%>
+  <div class="bg-gray py-6">
+    <div class="container">
+        <div class="menu-container row flex-wrap">
+        <!-- JS渲染菜單品項 -->
+            
+        </div>
+    </div> 
+  </div>
+  <!-- <div class=" py-6">
+    <div class="container">
+        <div class="menu-container row flex-wrap">
+          <div class="col-md-4">
+                <div class="card-menu">
+                    <img src="../assets/images/burger.jpg" alt="" class="card-img">
+                    <div class="menu-title font-NotoSerif d-flex justify-content-between">
+                        <span class="menu-name">花生醬培根牛肉堡</span>
+                        <span class="menu-price">120$</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card-menu">
+                    <img src="../assets/images/burger.jpg" alt="" class="card-img">
+                    <div class="menu-title font-NotoSerif d-flex justify-content-between">
+                        <span class="menu-name">花生醬培根牛肉堡</span>
+                        <span class="menu-price">120$</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card-menu">
+                    <img src="../assets/images/burger.jpg" alt="" class="card-img">
+                    <div class="menu-title font-NotoSerif d-flex justify-content-between">
+                        <span class="menu-name">番茄羅勒義大利麵</span>
+                        <span class="menu-price">120$</span>
+                    </div>
+                </div>
+            </div>
+           
+            
+        </div>
+    </div> 
+  </div> -->
+
+
+<%- include('./layout/footer'); -%>
+  <script src="../pages/4_menu.js"></script>
+  <script>
+    renderMenu(menuData.Burger);
+  </script>
+  <script type="module" src="../main.js"></script>
+</body>
+</html>

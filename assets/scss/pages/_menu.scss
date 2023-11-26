@@ -1,3 +1,4 @@
+//菜單全部頁的背景們
 .bg-menu {
   background-image: url(/assets/images/index-menu-1.jpg);
   background: no-repeat cover ;
@@ -64,3 +65,39 @@
   backdrop-filter: blur(2px);
   padding: 24px;
 }
+//共用的菜單卡片conponent
+.card-menu {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  border: 3px solid #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  .card-img{
+    overflow: hidden;
+  }
+   img {
+    height: 350px;
+    object-fit: fit;
+    transform: scale(1);
+     &:hover {
+      overflow: hidden;
+      transform: scale(1.2);
+      transition:all 1s ease-out ;
+     }
+
+   }
+}
+.menu-title {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+  font-size: 24px;
+  color: $primary;
+  font-weight: 900;
+  @include pad {
+    font-size: 20px;
+    font-weight: 900;
+  }
+}
+//沙拉

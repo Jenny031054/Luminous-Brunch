@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body class="d-lg-flex flex-column vh-100">
+  <%- include('./layout/header'); -%>
+    <div class="container flex-grow-1 d-flex flex-column justify-content-center">
+      <div class="d-flex justify-content-center align-items-center mt-8 mt-lg-0 mb-8">
+        <span class="material-symbols-outlined fs-48">
+          save_as
+        </span>
+        <h2 class="mb-0 ms-4">修改會員資料</h2>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-md-5">
+          <form>
+            <label for="username" class="mb-1">姓名</label>
+            <br>
+            <input type="text" id="username" class="w-100 mb-5 bg-transparent py-1 border border-primary">
+            <br>
+            <label for="phoneNumber" class="mb-1">手機號碼</label>
+            <br>
+            <input type="text" id="phoneNumber" class="w-100 mb-5 bg-transparent py-1 border border-primary">
+            <br>
+            <label for="email" class="mb-1">信箱</label>
+            <br>
+            <input type="text" id="email" class="w-100 mb-8 bg-transparent py-1 border border-primary">
+            <div class="d-flex justify-content-around mb-8">
+              <button class="btn btn-outline-primary px-4 px-md-7">取消</button>
+              <button class="btn btn-primary px-4 px-md-7">儲存</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <%- include('./layout/footer'); -%>
+      <script type="module" src="../main.js"></script>
+</body>
+
+</html>

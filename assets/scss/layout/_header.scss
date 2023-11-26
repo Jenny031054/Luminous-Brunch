@@ -56,13 +56,13 @@
 // 剩餘區塊背景色
 @media (max-width: 992px) {
   .navbar_overlay {
-    width: 100%;
     height: 100vh;
     background-color: rgba(52, 52, 52);
     position: absolute;
     opacity: 0;
   }
   .navbar_overlay_show {
+    width: 100%;
     opacity: 0.3;
     z-index: 2;
   }

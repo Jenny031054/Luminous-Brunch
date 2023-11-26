@@ -339,8 +339,7 @@
               </div>
             </div>
           </div>
-          <div class=" carousel-item d-flex" id="course-section">
-          </div>
+          <div class="carousel-item d-flex" id="course-section"></div>
         </div>
         <div class="d-flex justify-content-center booking pb-10">
           <button type="button" class="btn btn-lg">立即訂位</button>
@@ -376,36 +375,42 @@
       // 顧客評論
 
       const data = [
-    {
-      img: 'http://127.0.0.1:5500/img/Avatar.png',
-      title: '陳大名1',
-      content:'他們的線上預約系統非常方便，讓我能在繁忙的日程中輕鬆安排用餐時光。用餐環境也非常優雅。讓我感受到了真正的歐式風情。',
-    },
-    {
-      img: 'http://127.0.0.1:5500/img/Avatar.png',
-      title: '陳大名2',
-      content:'他們的線上預約系統非常方便，讓我能在繁忙的日程中輕鬆安排用餐時光。用餐環境也非常優雅。讓我感受到了真正的歐式風情。',
-    },
-    {
-      img: 'http://127.0.0.1:5500/img/Avatar.png',
-      title: '陳大名3',
-      content:'他們的線上預約系統非常方便，讓我能在繁忙的日程中輕鬆安排用餐時光。用餐環境也非常優雅。讓我感受到了真正的歐式風情。',
-    },
-    {img: 'http://127.0.0.1:5500/img/Avatar.png',
-      title: '陳大名4',
-      content:'他們的線上預約系統非常方便，讓我能在繁忙的日程中輕鬆安排用餐時光。用餐環境也非常優雅。讓我感受到了真正的歐式風情。',
-    },
-  ];
-const courseSection = document.querySelector('#course-section');
-const previous = document.querySelector('#previous');
-const next = document.querySelector('#next');
+        {
+          img: 'http://127.0.0.1:5500/img/Avatar.png',
+          title: '陳大名1',
+          content:
+            '他們的線上預約系統非常方便，讓我能在繁忙的日程中輕鬆安排用餐時光。用餐環境也非常優雅。讓我感受到了真正的歐式風情。',
+        },
+        {
+          img: 'http://127.0.0.1:5500/img/Avatar.png',
+          title: '陳大名2',
+          content:
+            '他們的線上預約系統非常方便，讓我能在繁忙的日程中輕鬆安排用餐時光。用餐環境也非常優雅。讓我感受到了真正的歐式風情。',
+        },
+        {
+          img: 'http://127.0.0.1:5500/img/Avatar.png',
+          title: '陳大名3',
+          content:
+            '他們的線上預約系統非常方便，讓我能在繁忙的日程中輕鬆安排用餐時光。用餐環境也非常優雅。讓我感受到了真正的歐式風情。',
+        },
+        {
+          img: 'http://127.0.0.1:5500/img/Avatar.png',
+          title: '陳大名4',
+          content:
+            '他們的線上預約系統非常方便，讓我能在繁忙的日程中輕鬆安排用餐時光。用餐環境也非常優雅。讓我感受到了真正的歐式風情。',
+        },
+      ];
+      const courseSection = document.querySelector('#course-section');
+      const previous = document.querySelector('#previous');
+      const next = document.querySelector('#next');
 
-let num = 0;
-function render(num){
-  str = "";
-  data.filter((item, index) => num == index || num +1 == index)
-  .forEach(function(i){
-  str+=`     <div class="card me-12">
+      let num = 0;
+      function render(num) {
+        str = '';
+        data
+          .filter((item, index) => num == index || num + 1 == index)
+          .forEach(function (i) {
+            str += `     <div class="card me-12">
               <ul class="d-flex">
                 <li><img src="${i.img}" alt="#" class="coad-img"></li>
                 <li><div class="card-name">${i.title}</div></li>
@@ -422,31 +427,31 @@ function render(num){
               </div>
             </div>`;
             courseSection.innerHTML = str;
-  });
-};
-//操作前後
+          });
+      }
+      //操作前後
 
-previous.addEventListener('click',() => {
-  
-  if(num == 0){
-    return;
-  };
-  num --;
-  render(num);
-});
+      previous.addEventListener('click', () => {
+        if (num == 0) {
+          return;
+        }
+        num--;
+        render(num);
+      });
 
-next.addEventListener('click',() => {
-  console.log('uu')
-  //避免 num 超過資料
-  if(num == data.length - 1){
-    return;
-  };
-  num ++;
-  render(num);
-});
+      next.addEventListener('click', () => {
+        console.log('uu');
+        //避免 num 超過資料
+        if (num == data.length - 1) {
+          return;
+        }
+        num++;
+        render(num);
+      });
 
-render(num);
+      render(num);
     </script>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <script type="module" src="../main.js"></script>
   </body>
 </html>

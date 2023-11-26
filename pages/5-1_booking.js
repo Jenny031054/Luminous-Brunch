@@ -1,14 +1,14 @@
 'use strict';
+import axios from 'axios';
+import { postUrl } from './config';
 
 const form = document.querySelector('form');
 const steps = document.querySelectorAll('.step');
-const formContent = document.querySelector('#formContent');
-const submitButton = document.querySelector('#submitBtn');
+const submitBtn = document.querySelector('#submitBtn');
 const fields = ['peopleNumber', 'date', 'time', 'name', 'phoneNumber', 'email'];
-console.log(submitButton);
-const formDataManager = (function () {
-  let formData;
 
+export const formDataManager = (function () {
+  let formData;
   return {
     setFormData: function (data) {
       formData = data;
@@ -19,46 +19,61 @@ const formDataManager = (function () {
   };
 })();
 //儲存訂位資料
+let clickHandler;
 restoreBooking();
-function restoreBooking() {
-  submitButton.addEventListener('click', function handleClick(e) {
-    e.preventDefault();
-    e.stopPropagation();
 
+function restoreBooking() {
+  function clickHandler(e) {
+    e.preventDefault();
     if (!e) return;
     const dataArr = [...new FormData(form)];
     formDataManager.setFormData(Object.fromEntries(dataArr));
-    console.log(formDataManager.getFormData());
     const formData = formDataManager.getFormData();
 
+    axios
+      .post(postUrl, formData)
+      .then(() => {
+        renderConfirm(formData);
+      })
+      .catch(() => console.error);
     steps[0].classList.remove('active');
     steps[1].classList.add('active');
-    return formData;
-  });
-  renderConfirm(formData);
+  }
+  submitBtn.addEventListener('click', clickHandler);
 }
 
 //確認訂位資料
 function renderConfirm(formData) {
+  submitBtn.removeEventListener('click', clickHandler);
   const btnControl = document.querySelector('#btn-control');
   fields.map((item) => {
     const inputElement = document.querySelector(`#${item}`);
     inputElement.value = formData[item];
     inputElement.disabled = true;
   });
+  const buttons = [
+    { type: 'button', text: '重新填寫', id: 'rewrite', onClick: handleRewrite },
+    { type: 'submit', text: '確認', id: 'submitValue', onClick: handleConfirm },
+  ];
 
-  let htmlBooking = `<button type="button" class="btn btn-primary" id="rewrite">
-  重新填寫
-</button><button type="submit" class="btn btn-primary" id="submitValue">
-確認
-</button>`;
-  btnControl.innerHTML = htmlBooking;
-  rewriteData();
-  bookingConfirm();
-  bookingContents(formData);
+  btnControl.innerHTML = '';
+  //將buttons資料用迴圈賦予值
+  buttons.forEach((buttonInfo) => {
+    const button = document.createElement('button');
+    button.type = buttonInfo.type;
+    button.className = 'btn btn-primary';
+    button.id = buttonInfo.id;
+    button.innerText = buttonInfo.text;
+
+    button.addEventListener('click', buttonInfo.onClick);
+    btnControl.appendChild(button);
+  });
+
+  handleRewrite();
+  handleConfirm();
 }
 //重新填寫按鈕
-function rewriteData() {
+function handleRewrite() {
   const rewriteBtn = document.querySelector('#rewrite');
   rewriteBtn.addEventListener('click', (e) => {
     let html = `<div class="step-indicator">
@@ -142,11 +157,11 @@ function rewriteData() {
         required
       />
     </div>
-    <div class="d-flex justify-content-evenly mt-5" id="submitBtn">
+    <div class="d-flex justify-content-evenly mt-5" id="btn-control">
       <button
-        type="submit"
+        type="click"
         class="btn btn-primary act-btn"
-        id="submitValue"
+        id="submitBtn"
       >
         立即訂位
       </button>
@@ -156,25 +171,27 @@ function rewriteData() {
   });
 }
 //確認訂位
-function bookingConfirm() {
+function handleConfirm() {
   form.addEventListener('submit', function clickFunction(e) {
     e.preventDefault();
-    e.stopPropagation();
     window.location.href = './5-1-1_booking.html';
     console.log('完成跳轉');
+    bookingContents(formData);
   });
 }
-//完成訂位頁
-function bookingContents(formData) {
-  window.addEventListener('load', function () {
-    const contentsField = document.querySelector('#confirm-text');
-    console.log('contentsField:', contentsField);
 
-    let htmlFinal = `<p>您已完成訂位，訂位資訊如下：</p>
-  <p>用餐人數：${formData.peopleNumber}</p>
-  <p>日期：${formData.date}</p>`;
-    console.log(formData);
-    console.log(htmlFinal);
-    contentsField.innerHTML = htmlFinal;
-  });
+function bookingContents(formData) {
+  const contentsField = document.querySelector('#confirm-text-id');
+  // console.log('contentsField:', contentsField);
+  axios
+    .get(`${postUrl}?name=${formData.name}`)
+    .then((res) => {
+      console.log(res);
+      let htmlFinal = `<p>您已完成訂位，訂位資訊如下：</p>
+          <p>用餐人數：${res.data[0].peopleNumber}</p>
+          <p>日期：${res.data[0].date}</p>`;
+      console.log(htmlFinal);
+      contentsField.innerHTML = htmlFinal;
+    })
+    .catch((error) => console.log(error));
 }

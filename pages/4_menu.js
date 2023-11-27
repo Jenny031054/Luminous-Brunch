@@ -171,7 +171,7 @@ let menuData =
         },
         {   
             id:6,
-            title:"漢堡排佐嫩蛋早餐盤",
+            title:"漢堡排佐嫰蛋早餐盤",
             price:250,
             imgUrl:"https://images.unsplash.com/photo-1525184782196-8e2ded604bf7?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         },
@@ -292,20 +292,20 @@ let menuData =
 
 
 //選定元素
-const menuContainer = document.querySelector(".menu-container");
-const menuList = document.querySelector("#menuList");
+const menuContainer = document.querySelector('.menu-container');
+const menuList = document.querySelector('#menuList');
 console.log(menuList);
-const Salad = document.querySelector("#Salad");
-const Burger = document.querySelector("#Burger");
-const Sandwich = document.querySelector("#Sandwich");
-const Brunch = document.querySelector("#Brunch");
-const Pasta = document.querySelector("#Pasta");
-const Drink = document.querySelector("#Drink");
-const Title = document.querySelector("#Title");
-function renderMenu(data){
-    let str="";
-    data.forEach(function(item){
-        str += `
+const Salad = document.querySelector('#Salad');
+const Burger = document.querySelector('#Burger');
+const Sandwich = document.querySelector('#Sandwich');
+const Brunch = document.querySelector('#Brunch');
+const Pasta = document.querySelector('#Pasta');
+const Drink = document.querySelector('#Drink');
+const Title = document.querySelector('#Title');
+function renderMenu(data) {
+  let str = '';
+  data.forEach(function (item) {
+    str += `
         <div class="col-lg-4 mb-6">
             <div class="card-menu">
                 <div class="card-img">
@@ -317,11 +317,10 @@ function renderMenu(data){
                 </div>
             </div>
         </div>
-        `
-    });
-    menuContainer.innerHTML = str
-
-} ;
+        `;
+  });
+  menuContainer.innerHTML = str;
+}
 // menuBurgerBtn.addEventListener("click", function(e){
 //     e.preventDefault();
 //     renderMenu(menuData.burger);
@@ -329,16 +328,14 @@ function renderMenu(data){
 //     console.log("成功")
 
 // });
-menuList.addEventListener("click",function(e){
-    e.preventDefault();
-    console.log(e.target.getAttribute("id"));
-    let menuId = e.target.getAttribute("id");
-    // if(menuId == "menuSaladBtn"){
-    //     renderMenu(menuData.salad);
-    //     menuTitle.textContent = "| Salad |";
-    // }
-    renderMenu(menuData[menuId]);
-    menuTitle.textContent = `| ${menuId} |`;
-    
-})
-
+menuList.addEventListener('click', function (e) {
+  e.preventDefault();
+  console.log(e.target.getAttribute('id'));
+  let menuId = e.target.getAttribute('id');
+  // if(menuId == "menuSaladBtn"){
+  //     renderMenu(menuData.salad);
+  //     menuTitle.textContent = "| Salad |";
+  // }
+  renderMenu(menuData[menuId]);
+  menuTitle.textContent = `| ${menuId} |`;
+});

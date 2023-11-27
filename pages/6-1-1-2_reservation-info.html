@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body class="d-lg-flex flex-column vh-100">
+  <%- include('./layout/header'); -%>
+  <div class="container flex-grow-1 mt-9 mb-9">
+    <h2 class="mb-7 text-center">訂位資訊</h2>
+    <!-- <table class="border border-gray box-shadow-gray-300 row">
+      <thead class="bg-gray text-center">
+        <tr>
+          <th class="px-lg-6 py-lg-4">訂位編號</th>
+          <th class="px-lg-6 py-lg-4">預約日期</th>
+          <th class="px-lg-6 py-lg-4">預約時間</th>
+          <th class="px-lg-6 py-lg-4">用餐人數</th>
+          <th class="px-lg-6 py-lg-4">訂位時間</th>
+          <th class="px-lg-6 py-lg-4">姓名</th>
+          <th class="px-lg-6 py-lg-4">手機號碼</th>
+          <th class="px-lg-6 py-lg-4">信箱</th>
+          <th class="px-lg-6 py-lg-4"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="text-center">
+          <td class="px-5 py-4">4555</td>
+          <td class="px-5 py-4">2023/10/22</td>
+          <td class="px-5 py-4">上午11:00</td>
+          <td class="px-5 py-4">3位</td>
+          <td class="px-5 py-4">2023/10/21 15:36:01</td>
+          <td class="px-5 py-4">陳曉明</td>
+          <td class="px-5 py-4">0988123456</td>
+          <td class="px-5 py-4">abc@gmail.com</td>
+          <td class="px-5 py-4"><button class="btn btn-dark px-4" type="button">取消訂位</button></td>
+        </tr>
+      </tbody>
+    </table> -->
+    <table class="col-lg-6 border border-gray box-shadow-gray-300 mx-auto">
+      <thead class="bg-gray text-center">
+        <tr>
+          <th class="px-lg-6 py-lg-4">訂位編號</th>
+          <th class="px-lg-6 py-lg-4"></th>
+          <th class="px-lg-6 py-lg-4"></th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="text-center">
+          <td class="px-5 py-4 fs-7 fs-md-6">1697873761660</td>
+          <td class="px-1 px-md-5 py-1 py-sm-4"><button class="fs-7 fs-md-6 btn btn-yellow-100" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">詳細資訊</button></td>
+          <td class="px-1 px-md-5 py-1 py-sm-4"><button class="fs-7 fs-md-6 btn btn-outline-dark" type="button">取消訂位</button></td>
+        </tr>
+        <!--  -->
+        <tr class="text-center">
+          <td class="px-5 py-4 fs-7 fs-md-6">1697873847547</td>
+          <td class="px-1 px-md-5 py-1 py-sm-4"><button class="fs-7 fs-md-6 btn btn-yellow-100" type="button">詳細資訊</button></td>
+          <td class="px-1 px-md-5 py-1 py-sm-4"><button class="fs-7 fs-md-6 btn btn-outline-dark" type="button">取消訂位</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <%- include('./layout/footer'); -%>
+  <script type="module" src="../main.js"></script>
+</body>
+</html>

@@ -33,7 +33,7 @@ signUp(obj);
 })
 
 function signUp(obj){
-    axios.post(' https://json-server-auth-q2r9.onrender.com/users/signup',obj)
+    axios.post('https://json-server-auth-q2r9.onrender.com/signup',obj)
     .then(function(res){
         if(res.status == 201){
             window.location.assign("_login.html");

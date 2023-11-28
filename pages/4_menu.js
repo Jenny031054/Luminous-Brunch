@@ -302,6 +302,10 @@ const Brunch = document.querySelector('#Brunch');
 const Pasta = document.querySelector('#Pasta');
 const Drink = document.querySelector('#Drink');
 const Title = document.querySelector('#Title');
+//獲取網址參數
+const urlParams = new URLSearchParams(window.location.search);
+let param1Value = urlParams.get('menu'); // value2 
+
 function renderMenu(data) {
   let str = '';
   data.forEach(function (item) {
@@ -320,6 +324,7 @@ function renderMenu(data) {
         `;
   });
   menuContainer.innerHTML = str;
+  menuTitle.textContent =`| ${param1Value} |`;
 }
 // menuBurgerBtn.addEventListener("click", function(e){
 //     e.preventDefault();
@@ -328,23 +333,32 @@ function renderMenu(data) {
 //     console.log("成功")
 
 // });
+
 menuList.addEventListener('click', function (e) {
-  // 網址
+// 網址
 // 獲取當前網頁 URL
-const urlParams = new URLSearchParams(window.location.search);
+
 
 // 使用 get() 方法獲取特定參數的值
-const param1Value = urlParams.get('param1'); // value2  
+ 
+console.log(param1Value);
   e.preventDefault();
   console.log(e.target.getAttribute('id'));
   let menuId = e.target.getAttribute('id');
-  // if(menuId == "menuSaladBtn"){
-  //     renderMenu(menuData.salad);
-  //     menuTitle.textContent = "| Salad |";
-  // }
-  renderMenu(menuData[menuId]);
+  //防止點擊到空的地方還改變標題
+//   if(menuId == "menuList"){
+//       return
+//   }else{
+   
+//   } 
+  param1Value = menuId;
+  renderMenu(menuData[param1Value]);
   menuTitle.textContent = `| ${menuId} |`;
+  
 });
+// dropdownMenu.addEventListener('click',function(e){
+
+// });
 
 
 

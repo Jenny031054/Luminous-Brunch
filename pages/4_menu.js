@@ -171,7 +171,7 @@ let menuData =
         },
         {   
             id:6,
-            title:"漢堡排佐嫰蛋早餐盤",
+            title :"漢堡排佐嫰蛋早餐盤",
             price:250,
             imgUrl:"https://images.unsplash.com/photo-1525184782196-8e2ded604bf7?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         },
@@ -339,3 +339,10 @@ menuList.addEventListener('click', function (e) {
   renderMenu(menuData[menuId]);
   menuTitle.textContent = `| ${menuId} |`;
 });
+
+// 網址
+// 獲取當前網頁 URL
+const urlParams = new URLSearchParams(window.location.search);
+
+// 使用 get() 方法獲取特定參數的值
+const param1Value = urlParams.get('param1'); // value2

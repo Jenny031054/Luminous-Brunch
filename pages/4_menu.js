@@ -356,9 +356,7 @@ console.log(param1Value);
   menuTitle.textContent = `| ${menuId} |`;
   
 });
-// dropdownMenu.addEventListener('click',function(e){
 
-// });
 
 
 

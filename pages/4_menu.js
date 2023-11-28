@@ -329,6 +329,12 @@ function renderMenu(data) {
 
 // });
 menuList.addEventListener('click', function (e) {
+  // 網址
+// 獲取當前網頁 URL
+const urlParams = new URLSearchParams(window.location.search);
+
+// 使用 get() 方法獲取特定參數的值
+const param1Value = urlParams.get('param1'); // value2  
   e.preventDefault();
   console.log(e.target.getAttribute('id'));
   let menuId = e.target.getAttribute('id');
@@ -340,9 +346,5 @@ menuList.addEventListener('click', function (e) {
   menuTitle.textContent = `| ${menuId} |`;
 });
 
-// 網址
-// 獲取當前網頁 URL
-const urlParams = new URLSearchParams(window.location.search);
 
-// 使用 get() 方法獲取特定參數的值
-const param1Value = urlParams.get('param1'); // value2
+

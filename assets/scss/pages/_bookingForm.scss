@@ -78,4 +78,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: 5vmin;
+}
+.form-content-confirm {
+  display: flex;
+  flex-direction: column;
+  font-size: 5vmin;
+  .booking-Contents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }

@@ -30,11 +30,34 @@ if (window.location.href.includes('register.html')) {
     signUp(obj);
   });
 
+  signupBtn.addEventListener('click', function () {
+    if (
+      inputEmail.value.trim() == '' ||
+      Name.value.trim() == ''
+      // phone.value.trim() == ""
+    ) {
+      alert('請確實填寫');
+      return;
+    } else if (
+      inputPassword.value.length < 6 ||
+      checkPassword.value.length < 6
+    ) {
+      alert('密碼錯誤');
+      return;
+    }
+    let obj = {};
+    obj.email = inputEmail.value;
+    obj.password = inputPassword.value;
+    obj.checkPassword = checkPassword.value;
+    obj.nickName = Name.value;
+    // obj.Phone = phone.value;
+    signUp(obj);
+  });
+
   function signUp(obj) {
     axios
-      .post('https://json-server-auth-q2r9.onrender.com/users/signup', obj)
+      .post('https://json-server-auth-q2r9.onrender.com/signup', obj)
       .then(function (res) {
-        console.log(res);
         if (res.status == 201) {
           window.location.assign('_login.html');
         }

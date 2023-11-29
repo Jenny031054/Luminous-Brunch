@@ -326,26 +326,26 @@ let menuData = {
     },
   ],
 };
+if (window.location.href.includes('4_menu.html')) {
+  //選定元素
+  const menuContainer = document.querySelector('.menu-container');
+  const menuList = document.querySelector('#menuList');
+  console.log(menuList);
+  const Salad = document.querySelector('#Salad');
+  const Burger = document.querySelector('#Burger');
+  const Sandwich = document.querySelector('#Sandwich');
+  const Brunch = document.querySelector('#Brunch');
+  const Pasta = document.querySelector('#Pasta');
+  const Drink = document.querySelector('#Drink');
+  const Title = document.querySelector('#Title');
+  //獲取網址參數
+  const urlParams = new URLSearchParams(window.location.search);
+  let param1Value = urlParams.get('menu'); // value2
 
-//選定元素
-const menuContainer = document.querySelector('.menu-container');
-const menuList = document.querySelector('#menuList');
-console.log(menuList);
-const Salad = document.querySelector('#Salad');
-const Burger = document.querySelector('#Burger');
-const Sandwich = document.querySelector('#Sandwich');
-const Brunch = document.querySelector('#Brunch');
-const Pasta = document.querySelector('#Pasta');
-const Drink = document.querySelector('#Drink');
-const Title = document.querySelector('#Title');
-//獲取網址參數
-const urlParams = new URLSearchParams(window.location.search);
-let param1Value = urlParams.get('menu'); // value2
-
-function renderMenu(data) {
-  let str = '';
-  data.forEach(function (item) {
-    str += `
+  function renderMenu(data) {
+    let str = '';
+    data.forEach(function (item) {
+      str += `
         <div class="col-lg-4 mb-6">
             <div class="card-menu">
                 <div class="card-img">
@@ -358,35 +358,36 @@ function renderMenu(data) {
             </div>
         </div>
         `;
+    });
+    menuContainer.innerHTML = str;
+    menuTitle.textContent = `| ${param1Value} |`;
+  }
+  // menuBurgerBtn.addEventListener("click", function(e){
+  //     e.preventDefault();
+  //     renderMenu(menuData.burger);
+  //     menuTitle.textContent = "| Burger |";
+  //     console.log("成功")
+
+  // });
+
+  menuList.addEventListener('click', function (e) {
+    // 網址
+    // 獲取當前網頁 URL
+
+    // 使用 get() 方法獲取特定參數的值
+
+    console.log(param1Value);
+    e.preventDefault();
+    console.log(e.target.getAttribute('id'));
+    let menuId = e.target.getAttribute('id');
+    //防止點擊到空的地方還改變標題
+    //   if(menuId == "menuList"){
+    //       return
+    //   }else{
+
+    //   }
+    param1Value = menuId;
+    renderMenu(menuData[param1Value]);
+    menuTitle.textContent = `| ${menuId} |`;
   });
-  menuContainer.innerHTML = str;
-  menuTitle.textContent = `| ${param1Value} |`;
 }
-// menuBurgerBtn.addEventListener("click", function(e){
-//     e.preventDefault();
-//     renderMenu(menuData.burger);
-//     menuTitle.textContent = "| Burger |";
-//     console.log("成功")
-
-// });
-
-menuList.addEventListener('click', function (e) {
-  // 網址
-  // 獲取當前網頁 URL
-
-  // 使用 get() 方法獲取特定參數的值
-
-  console.log(param1Value);
-  e.preventDefault();
-  console.log(e.target.getAttribute('id'));
-  let menuId = e.target.getAttribute('id');
-  //防止點擊到空的地方還改變標題
-  //   if(menuId == "menuList"){
-  //       return
-  //   }else{
-
-  //   }
-  param1Value = menuId;
-  renderMenu(menuData[param1Value]);
-  menuTitle.textContent = `| ${menuId} |`;
-});

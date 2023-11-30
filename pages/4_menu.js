@@ -326,11 +326,12 @@ let menuData = {
     },
   ],
 };
-if (window.location.href.includes('4_menu.html')) {
+
+if (window.location.href.includes('4-1_menu-salad.html') || window.location.href.includes('4_menu.html')) {
   //選定元素
   const menuContainer = document.querySelector('.menu-container');
   const menuList = document.querySelector('#menuList');
-  console.log(menuList);
+  console.log(menuContainer);
   const Salad = document.querySelector('#Salad');
   const Burger = document.querySelector('#Burger');
   const Sandwich = document.querySelector('#Sandwich');
@@ -341,7 +342,9 @@ if (window.location.href.includes('4_menu.html')) {
   //獲取網址參數
   const urlParams = new URLSearchParams(window.location.search);
   let param1Value = urlParams.get('menu'); // value2
-
+  console.log(param1Value);
+  // 執行函示
+  renderMenu(menuData[param1Value]);
   function renderMenu(data) {
     let str = '';
     data.forEach(function (item) {
@@ -362,13 +365,6 @@ if (window.location.href.includes('4_menu.html')) {
     menuContainer.innerHTML = str;
     menuTitle.textContent = `| ${param1Value} |`;
   }
-  // menuBurgerBtn.addEventListener("click", function(e){
-  //     e.preventDefault();
-  //     renderMenu(menuData.burger);
-  //     menuTitle.textContent = "| Burger |";
-  //     console.log("成功")
-
-  // });
 
   menuList.addEventListener('click', function (e) {
     // 網址
@@ -391,3 +387,6 @@ if (window.location.href.includes('4_menu.html')) {
     menuTitle.textContent = `| ${menuId} |`;
   });
 }
+
+
+

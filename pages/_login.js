@@ -22,8 +22,10 @@ if (window.location.href.includes('_login.html')) {
       .then(function (res) {
         if (res.status == 200) {
           window.location.assign('index.html');
+          localStorage.setItem('isLogin', true);
         } else {
           alert('Login failed. Please check your credentials.');
+          localStorage.setItem('isLogin', false);
         }
       })
       .catch(function (error) {

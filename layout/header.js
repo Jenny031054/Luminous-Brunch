@@ -58,3 +58,29 @@ closeIcon.addEventListener('click', function (e) {
   hamberMenu.style.display = 'block';
   closeIcon.style.display = 'none';
 });
+
+const selectMemberCenter = document.querySelector('.selectMemberCenter');
+const dropdownMemberCenter = document.querySelector('.dropdownMemberCenter');
+selectMemberCenter.addEventListener('click', function (e) {
+  e.preventDefault();
+  if (e.target.nodeName == 'A' || e.target.nodeName == 'SPAN') {
+    dropdownMemberCenter.classList.toggle('active');
+  }
+});
+
+// 取localStorage的value來判斷memberLogin是否要顯示
+let isLogin = localStorage.getItem('isLogin');
+const memberLogin = document.querySelector('.memberLogin');
+const memberCenterItem = document.querySelector('.memberCenterItem');
+loginStatus();
+function loginStatus() {
+  memberLogin.style.display = isLogin === 'true' ? 'none' : 'block';
+  memberCenterItem.style.display = isLogin === 'true' ? 'block' : 'none';
+}
+
+const logOutBtn = document.querySelector('.logOutBtn');
+logOutBtn.addEventListener('click', function (e) {
+  localStorage.setItem('isLogin', false);
+  loginStatus();
+});
+// console.log(isLogin);

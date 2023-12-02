@@ -27,8 +27,11 @@ if (window.location.href.includes('5-1_booking.html')) {
     function clickHandler(e) {
       e.preventDefault();
       if (!e) return;
+      //創建form instance後轉為陣列
       const dataArr = [...new FormData(form)];
+      //透過Object.fromEntries將陣列轉為一般物件儲存到setFormData
       formDataManager.setFormData(Object.fromEntries(dataArr));
+      //從formDataManage取用formData
       formData = formDataManager.getFormData();
       axios
         .post(postUrl, formData)
@@ -44,13 +47,13 @@ if (window.location.href.includes('5-1_booking.html')) {
 
   //確認訂位資料
   function renderConfirm(formData) {
-    //撈取訂位資料
+    //撈取本地訂位資料
     localStorage.setItem('formData', JSON.stringify(formData));
     const btnControl = document.querySelector('#btn-control');
     //載入填寫內容
     fields.map((item) => {
       const inputElement = document.querySelector(`#${item}`);
-      inputElement.value = formData[item];
+      inputElement.value = formData[item].trim();
       //資料不可再編輯
       inputElement.disabled = true;
     });
@@ -60,10 +63,9 @@ if (window.location.href.includes('5-1_booking.html')) {
   確認
   </button>`;
     btnControl.innerHTML = html;
-
     handleConfirm(formData);
   }
-  //確認訂位
+  //確認訂位，跳轉成功畫面
   function handleConfirm() {
     form.addEventListener('submit', function clickFunction(e) {
       e.preventDefault();

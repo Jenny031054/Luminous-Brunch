@@ -1,3 +1,14 @@
+// vite 打包圖片
+import tunasalad from "../assets/images/menuImg/tunasalad.jpg";
+import tomatoSandwich from "../assets/images/menuImg/tomatoSandwich.jpg";
+import avocadoSandwich from "../assets/images/menuImg/avocadoSandwich.jpg";
+import bacon from "../assets/images/menuImg/bacon.jpg";
+import baconPasta from "../assets/images/menuImg/baconPasta.jpg";
+import BenedictEggs from "../assets/images/menuImg/BenedictEggs.jpg";
+import yogret from "../assets/images/menuImg/yogret.jpg";
+import milktea from "../assets/images/menuImg/milktea.jpg";
+//
+
 let menuData = {
   Salad: [
     {
@@ -18,7 +29,7 @@ let menuData = {
       id: 3,
       title: '舒肥雞胸沙拉',
       price: 100,
-      imgUrl: '../assets/images/menuImg/tunasalad.jpg',
+      imgUrl: tunasalad,
     },
     {
       id: 4,
@@ -147,13 +158,13 @@ let menuData = {
       id: 8,
       title: '羅勒番茄蛋開放式吐司',
       price: 120,
-      imgUrl: '../assets/images/menuImg/tomatoSandwich.jpg',
+      imgUrl: tomatoSandwich,
     },
     {
       id: 9,
       title: '酪梨火腿鮮蔬三明治',
       price: 120,
-      imgUrl: '../assets/images/menuImg/avocadoSandwich.jpg',
+      imgUrl: avocadoSandwich,
     },
   ],
   Brunch: [
@@ -161,19 +172,19 @@ let menuData = {
       id: 1,
       title: '巴西野莓優格燕麥碗',
       price: 150,
-      imgUrl: '../assets/images/menuImg/yogret.jpg',
+      imgUrl: yogret,
     },
     {
       id: 2,
       title: '燻鮭魚乾酪班尼迪克蛋',
       price: 250,
-      imgUrl: '../assets/images/menuImg/BenedictEggs.jpg',
+      imgUrl: BenedictEggs,
     },
     {
       id: 3,
       title: '培根太陽蛋早午餐',
       price: 230,
-      imgUrl: '../assets/images/menuImg/bacon.jpg',
+      imgUrl: bacon,
     },
     {
       id: 4,
@@ -223,7 +234,7 @@ let menuData = {
       id: 2,
       title: '松露奶油培根義大利麵',
       price: 250,
-      imgUrl: '../assets/images/menuImg/baconPasta.jpg',
+      imgUrl: baconPasta,
     },
     {
       id: 3,
@@ -322,7 +333,7 @@ let menuData = {
       id: 9,
       title: '伯爵鮮奶茶',
       price: 120,
-      imgUrl: '../assets/images/menuImg/milktea.jpg',
+      imgUrl: milktea,
     },
   ],
 };
@@ -386,7 +397,8 @@ if (window.location.href.includes('4-1_menu-salad.html') || window.location.href
     renderMenu(menuData[param1Value]);
     menuTitle.textContent = `| ${menuId} |`;
   });
-}
+};
+
 
 
 

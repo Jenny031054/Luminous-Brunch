@@ -6,7 +6,8 @@ const phone = document.querySelector('#inputPhone');
 const signupBtn = document.querySelector('#signup');
 import axios from 'axios';
 if (window.location.href.includes('_register.html')) {
-  signupBtn.addEventListener('click', function () {
+  signupBtn.addEventListener('click', function (e) {
+    e.preventDefault();
     if (
       inputEmail.value.trim() == '' ||
       Name.value.trim() == ''

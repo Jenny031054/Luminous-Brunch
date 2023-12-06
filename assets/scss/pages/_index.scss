@@ -326,3 +326,15 @@
   background-color: transparent;
 }
 //news section end
+#toTOP {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

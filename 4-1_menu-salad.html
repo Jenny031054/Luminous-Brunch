@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salad</title>
-  <script type="module" crossorigin src="/Luminous-Brunch/assets/main-88287025.js"></script>
-  <link rel="stylesheet" href="/Luminous-Brunch/assets/main-39317e94.css">
+    <title>菜單分頁</title>
+  <script type="module" crossorigin src="/Luminous-Brunch/assets/main-fd35fea6.js"></script>
+  <link rel="stylesheet" href="/Luminous-Brunch/assets/main-9a2ad696.css">
 </head>
 <body>
 <header class="position-relative bg-light">
@@ -91,10 +91,42 @@
           >線上訂位</a
         >
       </li>
-      <li class="nav_item">
+      <li class="memberLogin">
         <a class="py-4 py-lg-3 px-5 fw-500 d-block" href="_login.html"
           >會員註冊/登入</a
         >
+      </li>
+      <li class="memberCenterItem">
+        <a
+          class="selectMemberCenter py-4 px-5 fw-500 position-relative d-block border-bottom-1 d-flex justify-content-between"
+          href="#"
+          >會員中心<span class="material-symbols-outlined align-bottom">
+            arrow_drop_down
+          </span></a
+        >
+        <ul class="dropdownMemberCenter position_absolute_lg list-unstyled ps-0">
+          <li>
+            <a
+              class="py-4 px-9 py-lg-3 px-lg-6 border-bottom-1 fw-500"
+              href="6-1-1-1_modify-member-info.html"
+              >修改會員資料</a
+            >
+          </li>
+          <li>
+            <a
+              class="py-4 px-9 py-lg-3 px-lg-6 border-bottom-1 fw-500"
+              href="6-1-1-2_reservation-info.html"
+              >查看訂單資訊</a
+            >
+          </li>
+          <li>
+            <a
+              class="logOutBtn py-4 px-9 py-lg-3 px-lg-6 border-bottom-1 fw-500"
+              href="index.html"
+              >登出</a
+            >
+          </li>
+        </ul>
       </li>
     </ul>
     <a class="hamberMenu d-lg-none" href="#">
@@ -105,7 +137,7 @@
     </a>
   </div>
 </header>
-<div class=""></div>
+<div class="navbar_overlay"></div>
   <div class="py-6">
     <div class="container">
         <h1 id="menuTitle" class="display-1 text-center text-primary fw-bolder font-Caveat mb-auto">| Salad |</h1>
@@ -174,42 +206,7 @@
         </div>
     </div> 
   </div>
-  <!-- <div class=" py-6">
-    <div class="container">
-        <div class="menu-container row flex-wrap">
-          <div class="col-md-4">
-                <div class="card-menu">
-                    <img src="../assets/images/burger.jpg" alt="" class="card-img">
-                    <div class="menu-title font-NotoSerif d-flex justify-content-between">
-                        <span class="menu-name">花生醬培根牛肉堡</span>
-                        <span class="menu-price">120$</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card-menu">
-                    <img src="../assets/images/burger.jpg" alt="" class="card-img">
-                    <div class="menu-title font-NotoSerif d-flex justify-content-between">
-                        <span class="menu-name">花生醬培根牛肉堡</span>
-                        <span class="menu-price">120$</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card-menu">
-                    <img src="../assets/images/burger.jpg" alt="" class="card-img">
-                    <div class="menu-title font-NotoSerif d-flex justify-content-between">
-                        <span class="menu-name">番茄羅勒義大利麵</span>
-                        <span class="menu-price">120$</span>
-                    </div>
-                </div>
-            </div>
-           
-            
-        </div>
-    </div> 
-  </div> -->
-
+  
 
 <footer class="py-4 border-top bg-pink">
   <div class="container">
@@ -222,7 +219,7 @@
           <li><a href="#">關於我們</a></li>
           <li><a href="3_newsMain.html">最新消息/優惠</a></li>
           <li><a href="5-1_booking.html">線上訂位</a></li>
-          <li><a href="#">會員註冊/登入</a></li>
+          <li><a href="_login.html">會員註冊/登入</a></li>
         </ul>
       </div>
       <div class="footer-icon d-flex align-items-center">

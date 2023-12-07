@@ -27,7 +27,7 @@ if (window.location.href.includes('_register.html')) {
     obj.password = inputPassword.value;
     obj.checkPassword = checkPassword.value;
     obj.nickName = Name.value;
-    // obj.Phone = phone.value;
+    obj.Phone = phone.value;
     signUp(obj);
   });
 

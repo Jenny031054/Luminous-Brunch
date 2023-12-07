@@ -18,21 +18,11 @@
       </div>
       <div class="row justify-content-center">
         <div class="col-md-5">
-          <form>
-            <label for="username" class="mb-1">姓名</label>
-            <br>
-            <input type="text" id="username" class="w-100 mb-5 bg-transparent py-1 border border-primary">
-            <br>
-            <label for="phoneNumber" class="mb-1">手機號碼</label>
-            <br>
-            <input type="tel" id="phoneNumber" class="w-100 mb-5 bg-transparent py-1 border border-primary">
-            <br>
-            <label for="email" class="mb-1">信箱</label>
-            <br>
-            <input type="email" id="email" class="w-100 mb-8 bg-transparent py-1 border border-primary">
-            <div class="d-flex justify-content-around mb-8">
-              <button class="btn btn-outline-primary px-4 px-md-7">取消</button>
-              <button class="btn btn-primary px-4 px-md-7">儲存</button>
+          <form id="modifyMemberForm">
+            <div class="js-inputList"></div>
+              <!-- JS渲染 -->
+            <div class="js-saveGroup d-flex justify-content-between mb-8">
+              <!-- JS渲染 -->
             </div>
           </form>
         </div>
@@ -40,7 +30,8 @@
     </div>
 
     <%- include('./layout/footer'); -%>
-      <script type="module" src="../main.js"></script>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <script type="module" src="../main.js"></script>
 </body>
 
 </html>

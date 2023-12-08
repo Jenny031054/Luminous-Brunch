@@ -5,7 +5,7 @@ const Name = document.querySelector('#inputName');
 const phone = document.querySelector('#inputPhone');
 const signupBtn = document.querySelector('#signup');
 import axios from 'axios';
-if (window.location.href.includes('_register.html')) {
+if (window.location.href.includes('register.html')) {
   signupBtn.addEventListener('click', function (e) {
     e.preventDefault();
     if (
@@ -36,7 +36,7 @@ if (window.location.href.includes('_register.html')) {
       .post('https://json-server-auth-q2r9.onrender.com/signup', obj)
       .then(function (res) {
         if (res.status == 201) {
-          window.location.assign('_login.html');
+          window.location.assign('login.html');
         }
       })
       .catch(function (error) {

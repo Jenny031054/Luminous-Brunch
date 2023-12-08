@@ -3,7 +3,7 @@ const inputPassword = document.querySelector('#inputPassword');
 // const loginBtn = document.querySelector('#login');
 const form = document.querySelector('form');
 let token = '';
-if (window.location.href.includes('_login.html')) {
+if (window.location.href.includes('login.html')) {
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     if (inputEmail.value.trim() == '' || inputPassword.value.trim() == '') {

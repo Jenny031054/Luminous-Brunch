@@ -1,4 +1,4 @@
-//
+//功能需求：輸入正確的信箱、驗證碼(先設定有輸入數字就好)後跳轉到輸入新密碼畫面，如果兩格密碼相符的話就發送put請求，更改該帳號的密碼，畫面則跳轉到"密碼更改完成"
 if (window.location.href.includes('_password.html')) {
  const submitValidateEmail = document.querySelector(".submitValidateEmail");
  const passwordNewEmail = document.querySelector('input[name="passwordNewEmail"]');
@@ -99,11 +99,40 @@ function setNewPassword(){
       
   `;
   loginBody.innerHTML = str;
-  
+  const confrimPasswordBtn = document.querySelector("#confrimPasswordBtn");
+  confrimPasswordBtn.addEventListener('click',(e)=>{
+    finishPassword()
+  })
   
 };
 
+//跳轉 "密碼重製成功"
+function finishPassword(){
+  let str = "";
 
+  str =
+  `
+  <div class="d-flex justify-content-center mb-2">
+  <span class="material-symbols-outlined display-3 text-light mx-auto">
+    check_circle
+  </span>
+  </div>
+  <h1 class="h3 mb-3 font-weight-normal text-center text-light">密碼重置成功</h1>
+  <p class="text-light text-center">您已完成新密碼設定，請按下方按鈕回到登入頁面重新登入</p>
+
+  <div class="text-center mt-4">
+    <a 
+      class="btn btn-lg btn-blue btn-block w-100"
+      href="_login.html"
+      id=""
+    >
+      重新登入
+    </a>
+  </div>
+  `;
+  loginBody.innerHTML = str;
+}
+//程式都寫在這大括號上面
 };
 
 

@@ -8,6 +8,4 @@ import './pages/_register.js';
 import './pages/_login.js';
 import './pages/_forgotPassword.js';
 import './pages/6-1-1-1_modify-member-info.js';
-// console.log('Hello world!!!');
-// console.log('Hello world*2!!!');
-// console.log('成功加入');
+import './pages/6-1-1-2_reservation-info.js';

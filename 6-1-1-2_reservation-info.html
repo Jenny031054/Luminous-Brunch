@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <script type="module" crossorigin src="/Luminous-Brunch/assets/main-cf2c9043.js"></script>
+  <script type="module" crossorigin src="/Luminous-Brunch/assets/main-b7b7e429.js"></script>
   <link rel="stylesheet" href="/Luminous-Brunch/assets/main-9a2ad696.css">
 </head>
 <body class="d-lg-flex flex-column vh-100">
@@ -116,7 +116,7 @@
             <a
               class="py-4 px-9 py-lg-3 px-lg-6 border-bottom-1 fw-500"
               href="6-1-1-2_reservation-info.html"
-              >查看訂單資訊</a
+              >查看訂位資訊</a
             >
           </li>
           <li>
@@ -140,7 +140,7 @@
 <div class="navbar_overlay"></div>
   <div class="container flex-grow-1 mt-9 mb-9">
     <h2 class="mb-7 text-center">訂位資訊</h2>
-    <!-- <table class="border border-gray box-shadow-gray-300 row">
+    <table class="border border-gray box-shadow-gray-300 mx-auto">
       <thead class="bg-gray text-center">
         <tr>
           <th class="px-lg-6 py-lg-4">訂位編號</th>
@@ -154,41 +154,8 @@
           <th class="px-lg-6 py-lg-4"></th>
         </tr>
       </thead>
-      <tbody>
-        <tr class="text-center">
-          <td class="px-5 py-4">4555</td>
-          <td class="px-5 py-4">2023/10/22</td>
-          <td class="px-5 py-4">上午11:00</td>
-          <td class="px-5 py-4">3位</td>
-          <td class="px-5 py-4">2023/10/21 15:36:01</td>
-          <td class="px-5 py-4">陳曉明</td>
-          <td class="px-5 py-4">0988123456</td>
-          <td class="px-5 py-4">abc@gmail.com</td>
-          <td class="px-5 py-4"><button class="btn btn-dark px-4" type="button">取消訂位</button></td>
-        </tr>
-      </tbody>
-    </table> -->
-    <table class="col-lg-6 border border-gray box-shadow-gray-300 mx-auto">
-      <thead class="bg-gray text-center">
-        <tr>
-          <th class="px-lg-6 py-lg-4">訂位編號</th>
-          <th class="px-lg-6 py-lg-4"></th>
-          <th class="px-lg-6 py-lg-4"></th>
-          
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="text-center">
-          <td class="px-5 py-4 fs-7 fs-md-6">1697873761660</td>
-          <td class="px-1 px-md-5 py-1 py-sm-4"><button class="fs-7 fs-md-6 btn btn-yellow-100" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">詳細資訊</button></td>
-          <td class="px-1 px-md-5 py-1 py-sm-4"><button class="fs-7 fs-md-6 btn btn-outline-dark" type="button">取消訂位</button></td>
-        </tr>
-        <!--  -->
-        <tr class="text-center">
-          <td class="px-5 py-4 fs-7 fs-md-6">1697873847547</td>
-          <td class="px-1 px-md-5 py-1 py-sm-4"><button class="fs-7 fs-md-6 btn btn-yellow-100" type="button">詳細資訊</button></td>
-          <td class="px-1 px-md-5 py-1 py-sm-4"><button class="fs-7 fs-md-6 btn btn-outline-dark" type="button">取消訂位</button></td>
-        </tr>
+      <tbody class="js-tbody">
+        <!-- JS渲染 -->
       </tbody>
     </table>
   </div>
@@ -256,6 +223,7 @@
     </div>
   </div>
 </footer>
+  <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
   
 </body>
 </html>

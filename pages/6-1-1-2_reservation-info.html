@@ -9,7 +9,7 @@
   <%- include('./layout/header'); -%>
   <div class="container flex-grow-1 mt-9 mb-9">
     <h2 class="mb-7 text-center">訂位資訊</h2>
-    <!-- <table class="border border-gray box-shadow-gray-300 row">
+    <table class="border border-gray box-shadow-gray-300 mx-auto">
       <thead class="bg-gray text-center">
         <tr>
           <th class="px-lg-6 py-lg-4">訂位編號</th>
@@ -23,45 +23,68 @@
           <th class="px-lg-6 py-lg-4"></th>
         </tr>
       </thead>
-      <tbody>
-        <tr class="text-center">
-          <td class="px-5 py-4">4555</td>
-          <td class="px-5 py-4">2023/10/22</td>
-          <td class="px-5 py-4">上午11:00</td>
-          <td class="px-5 py-4">3位</td>
-          <td class="px-5 py-4">2023/10/21 15:36:01</td>
-          <td class="px-5 py-4">陳曉明</td>
-          <td class="px-5 py-4">0988123456</td>
-          <td class="px-5 py-4">abc@gmail.com</td>
-          <td class="px-5 py-4"><button class="btn btn-dark px-4" type="button">取消訂位</button></td>
-        </tr>
-      </tbody>
-    </table> -->
-    <table class="col-lg-6 border border-gray box-shadow-gray-300 mx-auto">
-      <thead class="bg-gray text-center">
-        <tr>
-          <th class="px-lg-6 py-lg-4">訂位編號</th>
-          <th class="px-lg-6 py-lg-4"></th>
-          <th class="px-lg-6 py-lg-4"></th>
-          
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="text-center">
-          <td class="px-5 py-4 fs-7 fs-md-6">1697873761660</td>
-          <td class="px-1 px-md-5 py-1 py-sm-4"><button class="fs-7 fs-md-6 btn btn-yellow-100" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">詳細資訊</button></td>
-          <td class="px-1 px-md-5 py-1 py-sm-4"><button class="fs-7 fs-md-6 btn btn-outline-dark" type="button">取消訂位</button></td>
-        </tr>
-        <!--  -->
-        <tr class="text-center">
-          <td class="px-5 py-4 fs-7 fs-md-6">1697873847547</td>
-          <td class="px-1 px-md-5 py-1 py-sm-4"><button class="fs-7 fs-md-6 btn btn-yellow-100" type="button">詳細資訊</button></td>
-          <td class="px-1 px-md-5 py-1 py-sm-4"><button class="fs-7 fs-md-6 btn btn-outline-dark" type="button">取消訂位</button></td>
-        </tr>
+      <tbody class="js-tbody">
+        <!-- JS渲染 -->
       </tbody>
     </table>
   </div>
   <%- include('./layout/footer'); -%>
+  <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
   <script type="module" src="../main.js"></script>
+  <script>
+    let reservationData = [];
+    const jsTbody = document.querySelector('.js-tbody');
+    init();
+    function init(){
+      getReservationData();
+    }
+    function getReservationData(){
+      axios
+      .get(`https://luminous-brunch.onrender.com/posts`)
+      .then(function(res){
+        reservationData = res.data;
+        if(reservationData.length === 0){
+          jsTbody.innerHTML = `<tr><td></td><td></td><td></td>
+        <td class="p-5">目前無任何訂位資訊</td></tr>`;
+          return;
+        }
+        renderReservationData();
+      })
+    }
+    
+    function renderReservationData(){
+      let str = '';
+      reservationData.forEach(function(item){
+        // console.log(item);
+        str+=`
+        <tr class="text-center">
+          <td class="px-5 py-4">${item.id}</td>
+          <td class="px-5 py-4">${item.date}</td>
+          <td class="px-5 py-4">${item.time}</td>
+          <td class="px-5 py-4">${item.peopleNumber}位</td>
+          <td class="px-5 py-4">${new Date().toLocaleDateString()} <br/> ${new Date().toLocaleTimeString()}</td>
+          <td class="px-5 py-4">${item.name}</td>
+          <td class="px-5 py-4">${item.phoneNumber}</td>
+          <td class="px-5 py-4">${item.email}</td>
+          <td class="px-5 py-4"><button data-id="${item.id}" class="btn btn-dark px-4" type="button">取消訂位</button></td>
+        </tr>
+        `
+      })
+      jsTbody.innerHTML = str;
+    }
+
+    // 點擊取消訂位按鈕
+    jsTbody.addEventListener('click',function(e){
+      const id = e.target.getAttribute('data-id');
+      if(id === null){
+        return;
+      }
+      axios.delete(`https://luminous-brunch.onrender.com/posts/${id}`)
+      .then(function(res){
+        alert('取消訂位成功');
+        getReservationData();
+      })
+    })
+  </script>
 </body>
 </html>

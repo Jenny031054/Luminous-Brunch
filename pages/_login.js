@@ -23,6 +23,8 @@ if (window.location.href.includes('login.html')) {
         if (res.status == 200) {
           window.location.assign('index.html');
           localStorage.setItem('isLogin', true);
+          const memberData = JSON.stringify(obj);
+          localStorage.setItem('memberData', memberData);
         } else {
           alert('Login failed. Please check your credentials.');
           localStorage.setItem('isLogin', false);

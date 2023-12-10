@@ -2,8 +2,12 @@ import axios from 'axios';
 
 if (window.location.href.includes('6-1-1-1_modify-member-info.html')) {
   let memberData = [];
+  const getMemberData = JSON.parse(localStorage.getItem('memberData'));
+  // console.log(getMemberData);
   axios
-    .get(`https://json-server-auth-q2r9.onrender.com/users/`)
+    .get(
+      `https://json-server-auth-q2r9.onrender.com/users?email=${getMemberData.email}`
+    )
     .then(function (res) {
       memberData = res.data;
       renderMemberData();
@@ -17,7 +21,7 @@ if (window.location.href.includes('6-1-1-1_modify-member-info.html')) {
     // console.log(memberData);
     let memberStr = '';
     memberData.forEach(function (item) {
-      memberStr += `
+      memberStr = `
             <label for="username" class="mb-1">姓名</label>
             <input type="text" id="username" class="w-100 mb-5 bg-transparent py-1 border border-primary" value="${item.nickName}">
             <label for="phoneNumber" class="mb-1">手機號碼</label>
@@ -48,7 +52,6 @@ if (window.location.href.includes('6-1-1-1_modify-member-info.html')) {
     const email = document.querySelector('#email');
     console.log(userId);
     if (userId === null) {
-      alert('你沒點擊到儲存按鈕');
       return;
     }
     axios

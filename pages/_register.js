@@ -50,7 +50,7 @@ if (window.location.href.includes('register.html')) {
     }
   })
   phone.addEventListener("blur",function(e){
-    if(CheckPassword(phone.value) == false){
+    if(validatePhone(phone.value) == false){
       document.querySelector(`[data-message="phone"]`).textContent = "請填寫正確 電話 格式";
       return;
     }

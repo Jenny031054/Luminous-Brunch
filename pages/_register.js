@@ -13,13 +13,13 @@ if (window.location.href.includes('register.html')) {
       Name.value.trim() == ''
       // phone.value.trim() == ""
     ) {
-      alert('請確實填寫');
+      // alert('請確實填寫');
       return;
     } else if (
       inputPassword.value.length < 6 ||
       checkPassword.value.length < 6
     ) {
-      alert('密碼錯誤');
+      // alert('密碼錯誤');
       return;
     }
     let obj = {};
@@ -29,6 +29,31 @@ if (window.location.href.includes('register.html')) {
     obj.nickName = Name.value;
     obj.Phone = phone.value;
     signUp(obj);
+  });
+
+  inputEmail.addEventListener("blur",function(e){
+    if(validateEmail(inputEmail.value) == false){
+      document.querySelector(`[data-message="Email"]`).textContent = "請填寫正確 Email 格式";
+      return;
+    }
+  });
+  inputPassword.addEventListener("blur",function(e){
+    if(CheckPassword(inputPassword.value) == false){
+      document.querySelector(`[data-message="password"]`).textContent = "請填寫正確 密碼 格式";
+      return;
+    }
+  });
+  checkPassword.addEventListener("blur",function(e){
+    if(CheckPassword(checkPassword.value) !== inputPassword.value){
+      document.querySelector(`[data-message="checkpassword"]`).textContent = "請與密碼相同格式";
+      return;
+    }
+  })
+  phone.addEventListener("blur",function(e){
+    if(CheckPassword(phone.value) == false){
+      document.querySelector(`[data-message="phone"]`).textContent = "請填寫正確 電話 格式";
+      return;
+    }
   });
 
   function signUp(obj) {
@@ -44,4 +69,33 @@ if (window.location.href.includes('register.html')) {
         alert('未連結');
       });
   }
+};
+// 驗證js
+function validateEmail(mail)
+{
+ if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail))
+  {
+    return true
+  }
+    return false
+};
+function CheckPassword(password) 
+{ 
+let passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+if(password.match(passw)) 
+{ 
+return true;
 }
+else
+{ 
+return false;
+}
+};
+function validatePhone(phone)
+{
+ if (/^[09]{2}\d{8}$/.test(phone))
+  {
+    return true
+  }
+    return false
+};

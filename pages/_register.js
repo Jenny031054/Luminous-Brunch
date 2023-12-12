@@ -58,7 +58,7 @@ if (window.location.href.includes('register.html')) {
 
   function signUp(obj) {
     axios
-      .post('https://json-server-auth-q2r9.onrender.com/signup', obj)
+      .post('https://demo-q3dk.onrender.com/signup', obj)
       .then(function (res) {
         if (res.status == 201) {
           window.location.assign('login.html');

@@ -6,17 +6,15 @@ if (window.location.href.includes('6-1-1-2_reservation-info.html')) {
     getReservationData();
   }
   function getReservationData() {
-    axios
-      .get(`https://luminous-brunch.onrender.com/posts`)
-      .then(function (res) {
-        reservationData = res.data;
-        if (reservationData.length === 0) {
-          jsTbody.innerHTML = `<tr><td></td><td></td><td></td>
+    axios.get(`https://demo-q3dk.onrender.com/bookings`).then(function (res) {
+      reservationData = res.data;
+      if (reservationData.length === 0) {
+        jsTbody.innerHTML = `<tr><td></td><td></td><td></td>
       <td class="p-5">目前無任何訂位資訊</td></tr>`;
-          return;
-        }
-        renderReservationData();
-      });
+        return;
+      }
+      renderReservationData();
+    });
   }
 
   function renderReservationData() {
@@ -49,7 +47,7 @@ if (window.location.href.includes('6-1-1-2_reservation-info.html')) {
       return;
     }
     axios
-      .delete(`https://luminous-brunch.onrender.com/posts/${id}`)
+      .delete(`https://demo-q3dk.onrender.com/bookings/${id}`)
       .then(function (res) {
         alert('取消訂位成功');
         getReservationData();

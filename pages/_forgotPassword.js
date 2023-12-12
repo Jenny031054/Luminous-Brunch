@@ -14,7 +14,7 @@ if (window.location.href.includes('password.html')) {
     submitValidateEmail.textContent = '已發送';
     let userEmail = passwordNewEmail.value;
     
-    axios.get('https://json-server-auth-q2r9.onrender.com/users')
+    axios.get('https://demo-q3dk.onrender.com/users')
       .then(function(res){
         console.log(res.data);
         usersData = res.data;
@@ -134,7 +134,7 @@ if (window.location.href.includes('password.html')) {
 function patchNewPassword(newPassword,userId){
   let str = "";
   // 發patch請求
-  axios.patch(`https://json-server-auth-q2r9.onrender.com/users/${userId}`,
+  axios.patch(`https://demo-q3dk.onrender.com/users/${userId}`,
   {
     password:newPassword
   }

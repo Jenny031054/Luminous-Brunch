@@ -18,7 +18,7 @@ if (window.location.href.includes('login.html')) {
 
   function login(obj) {
     axios
-      .post('https://json-server-auth-q2r9.onrender.com/login', obj)
+      .post('https://demo-q3dk.onrender.com/login', obj)
       .then(function (res) {
         if (res.status == 200) {
           window.location.assign('index.html');

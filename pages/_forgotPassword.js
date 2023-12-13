@@ -159,7 +159,7 @@ function patchNewPassword(newPassword,userId){
   <div class="text-center mt-4">
     <a 
       class="btn btn-lg btn-blue btn-block w-100"
-      href="_login.html"
+      href="login.html"
       id=""
     >
       重新登入

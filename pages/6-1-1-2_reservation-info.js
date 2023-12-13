@@ -6,11 +6,20 @@ if (window.location.href.includes('6-1-1-2_reservation-info.html')) {
     getReservationData();
   }
   function getReservationData() {
-    axios.get(`https://demo-q3dk.onrender.com/bookings`).then(function (res) {
+    // 加入loading圖片
+    jsTbody.innerHTML = `
+    <tr>
+      <td class="w-100" colspan="9">
+        <img class="d-block mx-auto" src="https://media.tenor.com/wpSo-8CrXqUAAAAi/loading-loading-forever.gif" width="40" height="40" alt="Loading Loading Forever Sticker - Loading Loading Forever Bobux Loader Stickers" style="max-width: 280px; background-color: unset;">
+      </td>
+    </tr>`;
+
+    // 
+    const getFormData = JSON.parse(localStorage.getItem('formData'));
+    axios.get(`https://demo-q3dk.onrender.com/bookings?email=${getFormData.email}`).then(function (res) {
       reservationData = res.data;
       if (reservationData.length === 0) {
-        jsTbody.innerHTML = `<tr><td></td><td></td><td></td>
-      <td class="p-5">目前無任何訂位資訊</td></tr>`;
+        jsTbody.innerHTML = `<tr><td class="p-5 text-center fw-bold" colspan="9">目前無任何訂位資訊</td></tr>`;
         return;
       }
       renderReservationData();

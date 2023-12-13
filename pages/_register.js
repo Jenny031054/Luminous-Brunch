@@ -30,29 +30,37 @@ if (window.location.href.includes('register.html')) {
     obj.Phone = phone.value;
     signUp(obj);
   });
-
+// 表單驗證
   inputEmail.addEventListener("blur",function(e){
     if(validateEmail(inputEmail.value) == false){
       document.querySelector(`[data-message="Email"]`).textContent = "請填寫正確 Email 格式";
       return;
-    }
+    }else if(validateEmail(inputEmail.value) == true){
+        document.querySelector(`[data-message="Email"]`).textContent = "";
+        return
+      }
   });
   inputPassword.addEventListener("blur",function(e){
     if(CheckPassword(inputPassword.value) == false){
       document.querySelector(`[data-message="password"]`).textContent = "請填寫正確 密碼 格式";
       return;
+    }else if(CheckPassword(inputPassword.value) == true){
+      document.querySelector(`[data-message="password"]`).textContent = "";
+      return
     }
   });
   checkPassword.addEventListener("blur",function(e){
-    if(CheckPassword(checkPassword.value) !== inputPassword.value){
+    if(CheckPassword(checkPassword.value) != inputPassword.value){
       document.querySelector(`[data-message="checkpassword"]`).textContent = "請與密碼相同格式";
-      return;
+      return
     }
   })
   phone.addEventListener("blur",function(e){
     if(validatePhone(phone.value) == false){
       document.querySelector(`[data-message="phone"]`).textContent = "請填寫正確 電話 格式";
       return;
+    }else if(validatePhone(phone.value) == true){
+      document.querySelector(`[data-message="phone"]`).textContent = "";
     }
   });
 

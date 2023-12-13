@@ -6,7 +6,7 @@ if (window.location.href.includes('6-1-1-1_modify-member-info.html')) {
   // console.log(getMemberData);
   axios
     .get(
-      `https://json-server-auth-q2r9.onrender.com/users?email=${getMemberData.email}`
+      `https://demo-q3dk.onrender.com/users?email=${getMemberData.email}`
     )
     .then(function (res) {
       memberData = res.data;
@@ -55,7 +55,7 @@ if (window.location.href.includes('6-1-1-1_modify-member-info.html')) {
       return;
     }
     axios
-      .patch(`https://json-server-auth-q2r9.onrender.com/users/${userId}`, {
+      .patch(`https://demo-q3dk.onrender.com/users/${userId}`, {
         email: email.value,
         Phone: phoneNumber.value,
         nickName: username.value,

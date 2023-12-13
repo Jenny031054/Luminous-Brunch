@@ -57,8 +57,10 @@ if (window.location.href.includes('register.html')) {
   });
 
   function signUp(obj) {
+    const alertMessage = document.querySelector('.alertMessage');
+    alertMessage.innerHTML = `正在連接伺服器，請稍後...<img class="d-block mx-auto" src="https://media.tenor.com/wpSo-8CrXqUAAAAi/loading-loading-forever.gif" width="50" height="50" alt="Loading Loading Forever Sticker - Loading Loading Forever Bobux Loader Stickers" style="max-width: 280px; background-color: unset;">`
     axios
-      .post('https://json-server-auth-q2r9.onrender.com/signup', obj)
+      .post('https://demo-q3dk.onrender.com/signup', obj)
       .then(function (res) {
         if (res.status == 201) {
           window.location.assign('login.html');

@@ -50,10 +50,12 @@ if (window.location.href.includes('register.html')) {
     }
   });
   checkPassword.addEventListener("blur",function(e){
-    if(CheckPassword(checkPassword.value) != inputPassword.value){
-      document.querySelector(`[data-message="checkpassword"]`).textContent = "請與密碼相同格式";
-      return
+    if(CheckPassword(checkPassword.value) !== CheckPassword(inputPassword.value)){
+      document.querySelector(`[data-message="checkpassword"]`).textContent = "請填寫正確 密碼 格式";
+    }else if((CheckPassword(checkPassword.value) == CheckPassword(inputPassword.value))){
+      document.querySelector(`[data-message="checkpassword"]`).textContent = "填寫正確"
     }
+    return
   })
   phone.addEventListener("blur",function(e){
     if(validatePhone(phone.value) == false){

@@ -4,6 +4,9 @@ import { postUrl } from './config';
 
 const form = document.querySelector('form');
 const steps = document.querySelectorAll('.step');
+const formContent = document.querySelector('#formContent');
+const btnControl = document.querySelector('#btn-control');
+
 const fields = ['peopleNumber', 'date', 'time', 'name', 'phoneNumber', 'email'];
 let formData;
 let html;
@@ -42,35 +45,53 @@ if (window.location.href.includes('5-1_booking.html')) {
         .catch(() => console.error);
       steps[0].classList.remove('active');
       steps[1].classList.add('active');
+      const markup = `
+      <div class="d-flex justify-content-center">
+      <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+    `;
+      btnControl.innerHTML = markup;
     }
   }
 
   //確認訂位資料
   function renderConfirm(formData) {
-    //撈取本地訂位資料
-    localStorage.setItem('formData', JSON.stringify(formData));
-    const btnControl = document.querySelector('#btn-control');
-    //載入填寫內容
-    fields.map((item) => {
-      const inputElement = document.querySelector(`#${item}`);
-      inputElement.value = formData[item].trim();
-      //資料不可再編輯
-      inputElement.disabled = true;
-    });
-    html = `<a class="btn btn-primary form-btn form-btn" href="5-1_booking.html" role="button"
-    >重新填寫</a
-  ><button type="submit" class="btn btn-primary form-btn" id="submitValue">
-  確認
-  </button>`;
-    btnControl.innerHTML = html;
-    handleConfirm(formData);
+    setTimeout(() => {
+      //撈取本地訂位資料
+      localStorage.setItem('formData', JSON.stringify(formData));
+      //載入填寫內容
+      fields.map((item) => {
+        const inputElement = document.querySelector(`#${item}`);
+        inputElement.value = formData[item].trim();
+        //資料不可再編輯
+        inputElement.disabled = true;
+      });
+      html = `<a class="btn btn-primary form-btn form-btn" href="5-1_booking.html" role="button"
+      >重新填寫</a
+    ><button type="submit" class="btn btn-primary form-btn" id="submitValue">
+    確認
+    </button>`;
+      btnControl.innerHTML = html;
+      handleConfirm(formData);
+    }, 1500);
   }
   //確認訂位，跳轉成功畫面
   function handleConfirm() {
     form.addEventListener('submit', function clickFunction(e) {
       e.preventDefault();
-      console.log('完成跳轉');
-      window.location.href = './5-1-1_booking.html';
+      const markup = `
+      <div class="d-flex justify-content-center">
+      <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+    `;
+      formContent.innerHTML = markup;
+      setTimeout(() => {
+        window.location.href = './5-1-1_booking.html';
+      }, 1500);
     });
   }
 }

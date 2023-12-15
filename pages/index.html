@@ -342,12 +342,16 @@
           <div class="carousel-item d-flex" id="course-section"></div>
         </div>
         <div class="d-flex justify-content-center booking pb-10">
-          <button type="button" class="btn btn-lg">立即訂位</button>
+          <a type="button" class="btn btn-primary" href="5-1_booking.html"
+            >立即訂位</a
+          >
         </div>
       </div>
     </div>
     <!-- 顧客頻論 end -->
-    <a id="toTOP"><img src="/assets/images/Back to top-lg.png" alt="backToTopBtn"></a>
+    <a id="toTOP"
+      ><img src="/assets/images/Back to top-lg.png" alt="backToTopBtn"
+    /></a>
     <%- include('./layout/footer'); -%>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -453,24 +457,26 @@
 
       // toTop
       document.addEventListener('DOMContentLoaded', function () {
-    var backToTopBtn = document.getElementById('toTOP');
+        var backToTopBtn = document.getElementById('toTOP');
 
-    window.addEventListener('scroll', function () {
-        // Show or hide the button based on scroll position
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        window.addEventListener('scroll', function () {
+          // Show or hide the button based on scroll position
+          if (
+            document.body.scrollTop > 20 ||
+            document.documentElement.scrollTop > 20
+          ) {
             backToTopBtn.style.display = 'block';
-        } else {
+          } else {
             backToTopBtn.style.display = 'none';
-        }
-    });
+          }
+        });
 
-    backToTopBtn.addEventListener('click', function () {
-        // Smooth scroll to the top of the page
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-    });
-});
-
+        backToTopBtn.addEventListener('click', function () {
+          // Smooth scroll to the top of the page
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+        });
+      });
     </script>
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <script type="module" src="../main.js"></script>

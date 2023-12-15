@@ -15,6 +15,15 @@ if (window.location.href.includes('5-1-1_booking.html')) {
       .get(`${postUrl}?name=${storedFormData.name}`)
       .then(() => {})
       .catch((error) => console.log(error));
+    // const markup = `
+    //   <div class="d-flex justify-content-center">
+    //   <div class="spinner-border" role="status">
+    //     <span class="visually-hidden">Loading...</span>
+    //   </div>
+    // </div>
+    // `;
+    // formConfirmContent.innerHTML = markup;
+
     htmlFinal = `
     <div class="booking-Contents">
         <p>您已完成訂位，訂位資訊如下：</p>
@@ -26,6 +35,8 @@ if (window.location.href.includes('5-1-1_booking.html')) {
         <a class="btn btn-primary form-btn" href="index.html" role="button">回首頁</a>
       
     </div>`;
+    // setTimeout(() => {
+    // }, 1500);
     formConfirmContent.innerHTML = htmlFinal;
   }
   cancelBooking(storedFormData);

@@ -52,7 +52,7 @@ if (window.location.href.includes('register.html')) {
     }
   });
   checkPassword.addEventListener('blur', function (e) {
-    if (CheckPassword(checkPassword.value) !== inputPassword.value) {
+    if (checkPassword.value !== inputPassword.value) {
       document.querySelector(`[data-message="checkpassword"]`).textContent =
         '請填寫正確 密碼 格式';
     } else {

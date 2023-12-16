@@ -61,7 +61,10 @@ if (window.location.href.includes('6-1-1-1_modify-member-info.html')) {
         nickName: username.value,
       })
       .then(function (res) {
-        alert('儲存成功');
+        Swal.fire({
+          title: '修改成功',
+          icon: 'success',
+        });
       })
       .catch(function (error) {
         console.log(error);

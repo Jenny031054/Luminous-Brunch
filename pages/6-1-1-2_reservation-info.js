@@ -1,3 +1,4 @@
+import axios from "axios";
 if (window.location.href.includes('6-1-1-2_reservation-info.html')) {
   let reservationData = [];
   const jsTbody = document.querySelector('.js-tbody');
@@ -58,7 +59,10 @@ if (window.location.href.includes('6-1-1-2_reservation-info.html')) {
     axios
       .delete(`https://demo-q3dk.onrender.com/bookings/${id}`)
       .then(function (res) {
-        alert('取消訂位成功');
+        Swal.fire({
+          title: '已成功取消訂位',
+          icon: 'success',
+        });
         getReservationData();
       });
   });

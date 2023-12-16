@@ -131,7 +131,7 @@
       <td class="w-100" colspan="9">
         <img class="d-block mx-auto" src="https://media.tenor.com/wpSo-8CrXqUAAAAi/loading-loading-forever.gif" width="40" height="40" alt="Loading Loading Forever Sticker - Loading Loading Forever Bobux Loader Stickers" style="max-width: 280px; background-color: unset;">
       </td>
-    </tr>`;const a=JSON.parse(localStorage.getItem("formData"));Ce.get(`https://demo-q3dk.onrender.com/bookings?email=${a.email}`).then(function(l){if(e=l.data,e.length===0){n.innerHTML='<tr><td class="p-5 text-center fw-bold" colspan="9">目前無任何訂位資訊</td></tr>';return}o()})},o=function(){let a="";e.forEach(function(l){a+=`
+    </tr>`,Ce.get("https://demo-q3dk.onrender.com/bookings").then(function(a){if(e=a.data.filter(l=>l.peopleNumber),e.length===0){n.innerHTML='<tr><td class="p-5 text-center fw-bold" colspan="9">目前無任何訂位資訊</td></tr>';return}o()})},o=function(){let a="";e.forEach(function(l){a+=`
       <tr class="text-center">
         <td class="px-5 py-4">${l.id}</td>
         <td class="px-5 py-4">${l.date}</td>

@@ -56,14 +56,33 @@ if (window.location.href.includes('6-1-1-2_reservation-info.html')) {
     if (id === null) {
       return;
     }
-    axios
-      .delete(`https://demo-q3dk.onrender.com/bookings/${id}`)
-      .then(function (res) {
-        Swal.fire({
-          title: '已成功取消訂位',
-          icon: 'success',
+    Swal.fire({
+      title: '確認取消訂位',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: '是',
+      cancelButtonText: '否'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // 如果按下"是"按鈕後執行的程式碼
+        axios
+        .delete(`https://demo-q3dk.onrender.com/bookings/${id}`)
+        .then(function (res) {
+          Swal.fire({
+            title: '已成功取消訂位',
+            icon: 'success',
+          });
+          getReservationData();
         });
-        getReservationData();
-      });
+        
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        // 如果按下"否"按鈕後執行的程式碼
+        Swal.fire({
+          title: '已保留訂位',
+          icon: 'info',
+        });
+      }
+    });
+    
   });
 }

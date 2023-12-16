@@ -16,9 +16,10 @@ if (window.location.href.includes('6-1-1-2_reservation-info.html')) {
     </tr>`;
 
     // 
-    const getFormData = JSON.parse(localStorage.getItem('formData'));
-    axios.get(`https://demo-q3dk.onrender.com/bookings?email=${getFormData.email}`).then(function (res) {
-      reservationData = res.data;
+    axios.get(`https://demo-q3dk.onrender.com/bookings`).then(function (res) {
+      reservationData = res.data.filter((item)=> {
+        return item.peopleNumber;
+      });
       if (reservationData.length === 0) {
         jsTbody.innerHTML = `<tr><td class="p-5 text-center fw-bold" colspan="9">目前無任何訂位資訊</td></tr>`;
         return;

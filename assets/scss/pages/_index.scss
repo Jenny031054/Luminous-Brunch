@@ -307,7 +307,7 @@
   right: 0;
 }
 
-.news-desktop {
+.news-list-desktop {
   width: 700px;
   height: 413px;
   justify-content: center;
@@ -345,15 +345,15 @@
   }
 }
 @media (max-width: 767px) {
-  .news-desktop {
+  .news-list-desktop {
     display: none;
   }
 }
-.news-mobile {
+.news-list-mobile {
   display: none;
 }
 @media (max-width: 767px) {
-  .news-mobile {
+  .news-list-mobile {
     width: 700px;
     height: 413px;
     justify-content: center;

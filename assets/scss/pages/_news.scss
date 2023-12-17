@@ -34,18 +34,14 @@ main {
       display: flex;
       width: 80vw;
       margin: 0 auto;
-      // flex-direction: row;
+
       .img-wrapper {
         width: 100%;
         .news-pic {
           max-width: 30%;
-          // height: 80%;
+
           background-position: center;
           object-fit: cover;
-          // border: #461b09 solid;
-          // top: 50%;
-          // left: 50%;
-          // transform: translate(-50%, -50%);
         }
         .news-content {
           justify-content: center;
